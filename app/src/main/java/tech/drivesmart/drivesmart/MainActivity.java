@@ -1,6 +1,7 @@
 package tech.drivesmart.drivesmart;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
@@ -10,6 +11,7 @@ import android.os.Vibrator;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityCompat.OnRequestPermissionsResultCallback;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -41,16 +43,18 @@ public final class MainActivity extends AppCompatActivity
   private static final String TAG = "MainActivity";
   private static final int PERMISSION_REQUESTS = 1;
 
-  private CameraSource cameraSource = null;
+  private CameraSource cameraSource;
   private CameraSourcePreview preview;
   private GraphicOverlay graphicOverlay;
   private String selectedModel = FACE_DETECTION;
 
-  public FirebaseVisionFace updatingFace = null;
-  public FirebaseVisionFace calibratedFace = null;
-  public TextView status = null;
-  public Handler handler;
+  public FirebaseVisionFace updatingFace;
+  public FirebaseVisionFace calibratedFace;
+  public TextView status;
+  public TextView debug;
+  public Handler handler1;
   public Handler handler2;
+  public Handler handler3;
   public boolean distractedX = false;
   public boolean distractedY = false;
   public boolean trueDistracted = false;
@@ -58,8 +62,6 @@ public final class MainActivity extends AppCompatActivity
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-
-    hideSystemUI();
     setContentView(R.layout.activity_main);
 
     preview = (CameraSourcePreview) findViewById(R.id.firePreview);
@@ -73,17 +75,36 @@ public final class MainActivity extends AppCompatActivity
 
     ToggleButton facingSwitch = (ToggleButton) findViewById(R.id.facingswitch);
     facingSwitch.setOnCheckedChangeListener(this);
-
     Button button = (Button) findViewById(R.id.calibratebutton);
     button.setOnClickListener(this);
-
     status = (TextView) findViewById(R.id.status);
+    debug = (TextView) findViewById(R.id.debug);
 
-    handler = new Handler();
+    handler1 = new Handler();
     handler2 = new Handler();
+    handler3 = new Handler();
 
     createCameraSource(selectedModel);
-    beepDistracted();
+    // hideSystemUI();
+    // runBeepDistracted();
+    // showCalibrateAlert();
+  }
+
+  private void showCalibrateAlert() {
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    builder.setTitle("Calibration Reminder");
+    builder.setMessage("Please remember to calibrate your initial face position before driving.");
+    builder.setCancelable(true);
+
+    builder.setPositiveButton(
+            "OK",
+            new DialogInterface.OnClickListener() {
+              public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+              }
+            });
+    AlertDialog alert = builder.create();
+    alert.show();
   }
 
   private void hideSystemUI() {
@@ -101,18 +122,18 @@ public final class MainActivity extends AppCompatActivity
                     | View.SYSTEM_UI_FLAG_FULLSCREEN);
   }
 
-  private void beepDistracted() {
+  private void runBeepDistracted() {
     final MediaPlayer mp = MediaPlayer.create(this, R.raw.distracted);
     final Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-    handler2.postDelayed(new Runnable(){
+    handler1.postDelayed(new Runnable(){
       public void run(){
         if (trueDistracted) {
           v.vibrate(300);
           mp.start();
         }
-        handler2.postDelayed(this, 500);
+        handler1.postDelayed(this, 700);
       }
-    }, 500);
+    }, 700);
   }
 
   @Override
@@ -206,16 +227,23 @@ public final class MainActivity extends AppCompatActivity
   public void onResume() {
     super.onResume();
     startCameraSource();
-    beepDistracted();
+    runBeepDistracted();
     hideSystemUI();
+    showCalibrateAlert();
   }
 
   @Override
   protected void onPause() {
     super.onPause();
     preview.stop();
+    updatingFace = null;
+    calibratedFace = null;
+    trueDistracted = false;
+    distractedX =  false;
+    distractedY = false;
+    handler1.removeCallbacksAndMessages(null);
     handler2.removeCallbacksAndMessages(null);
-    handler.removeCallbacksAndMessages(null);
+    handler3.removeCallbacksAndMessages(null);
   }
 
   @Override

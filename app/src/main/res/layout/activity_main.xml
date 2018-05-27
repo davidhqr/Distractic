@@ -28,9 +28,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:layout_marginTop="7dp"
-            android:layout_marginLeft="3dp"
-            android:src="@drawable/logo"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/logo_circle"/>
 
     </FrameLayout>
 
@@ -43,6 +43,25 @@
     </FrameLayout>
 
     <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_above="@+id/distractedText"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/debug"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:text=""/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/distractedText"
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:layout_above="@+id/control"

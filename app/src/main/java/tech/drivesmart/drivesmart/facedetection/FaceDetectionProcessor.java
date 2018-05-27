@@ -66,9 +66,6 @@ public class FaceDetectionProcessor extends VisionProcessorBase<List<FirebaseVis
     if (faces.size() > 0) {
       FirebaseVisionFace face = faces.get(0);
       processFace(face);
-      /*FaceGraphic faceGraphic = new FaceGraphic(graphicOverlay);
-      graphicOverlay.add(faceGraphic);
-      faceGraphic.updateFace(face, frameMetadata.getCameraFacing());*/
     }
   }
 
@@ -77,39 +74,48 @@ public class FaceDetectionProcessor extends VisionProcessorBase<List<FirebaseVis
     FirebaseVisionFace calibratedFace = instance.calibratedFace;
     if (calibratedFace != null) {
       final double diff1 = Math.abs(calibratedFace.getHeadEulerAngleY() - face.getHeadEulerAngleY());
-      FirebaseVisionFaceLandmark noseYCalibrated = calibratedFace.getLandmark(FirebaseVisionFaceLandmark.NOSE_BASE);
-      FirebaseVisionFaceLandmark noseYFace  = face.getLandmark(FirebaseVisionFaceLandmark.NOSE_BASE);
-      final boolean diff2 = (((noseYCalibrated == null) || (noseYFace == null) || (Math.abs(noseYCalibrated.getPosition().getY() - noseYFace.getPosition().getY()) > 120)) && (diff1 < 4)) ||
-              (((noseYCalibrated == null) || (noseYFace == null) || (Math.abs(noseYCalibrated.getPosition().getY() - noseYFace.getPosition().getY()) > 280)) && (diff1 < 7));
-      if ((diff1 > 15 || diff2) && speed > 10) {
-        int delay = 2000;
-        String msg = " (left/right)";
-        if (diff2) {
-          delay = 1000;
-          msg = " (up/down)";
-          instance.distractedY = true;
-        } else {
-          instance.distractedX = true;
+      final FirebaseVisionFaceLandmark noseYCalibrated = calibratedFace.getLandmark(FirebaseVisionFaceLandmark.LEFT_CHEEK);
+      final FirebaseVisionFaceLandmark noseYFace  = face.getLandmark(FirebaseVisionFaceLandmark.LEFT_CHEEK);
+      final boolean diff2 = (noseYCalibrated == null) || (noseYFace == null) ||
+              (Math.abs(noseYCalibrated.getPosition().getY() - noseYFace.getPosition().getY()) > 110);
+      if (diff1 > 15 && speed > 10) {
+        instance.distractedX = true;
+        instance.distractedY = false;
+        if (noseYCalibrated != null && noseYFace != null) {
+          // instance.debug.setText("LEFT/RIGHT: " + Math.abs(noseYCalibrated.getPosition().getY() - noseYFace.getPosition().getY()) + " | " + diff1);
         }
-        final String msg1 = msg;
-        instance.handler.postDelayed(new Runnable(){
+        instance.handler2.postDelayed(new Runnable(){
           @Override
           public void run(){
-            if (diff1 > 12 && instance.distractedX) {
-              instance.status.setText("You are distracted!" + msg1);
-              instance.trueDistracted = true;
-            } else if (diff2 && instance.distractedY) {
-              instance.status.setText("You are distracted!" + msg1);
+            if (instance.distractedX) {
+              instance.status.setText("You are distracted! (LEFT/RIGHT)");
               instance.trueDistracted = true;
             }
           }
-        }, delay);
+        }, 1600);
+      } else if (diff2 && speed > 10) {
+        instance.distractedY = true;
+        instance.distractedX = false;
+        if (noseYCalibrated != null && noseYFace != null) {
+         // instance.debug.setText("UP/DOWN: " + Math.abs(noseYCalibrated.getPosition().getY() - noseYFace.getPosition().getY()) + " | " + diff1);
+        }
+        instance.handler3.postDelayed(new Runnable(){
+          @Override
+          public void run(){
+            if (diff2 && instance.distractedY) {
+              instance.status.setText("You are distracted! (UP/DOWN)");
+              instance.trueDistracted = true;
+            }
+          }
+        }, 700);
       } else {
-        instance.status.setText("You are not distracted!");
+        instance.status.setText("You are not distracted");
+        // instance.debug.setText("NONE: " + Math.abs(noseYCalibrated.getPosition().getY() - noseYFace.getPosition().getY()) + " | " + diff1);
         instance.distractedX = false;
         instance.distractedY = false;
         instance.trueDistracted = false;
-        instance.handler.removeCallbacksAndMessages(null);
+        instance.handler2.removeCallbacksAndMessages(null);
+        instance.handler3.removeCallbacksAndMessages(null);
       }
     }
   }
