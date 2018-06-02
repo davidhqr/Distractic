@@ -25,7 +25,10 @@ import android.widget.ToggleButton;
 
 import com.google.android.gms.common.annotation.KeepName;
 import com.google.firebase.ml.vision.face.FirebaseVisionFace;
-import tech.drivesmart.drivesmart.facedetection.FaceDetectionProcessor;
+import tech.drivesmart.drivesmart.processors.FaceDetectionProcessor;
+import tech.drivesmart.drivesmart.models.CameraSource;
+import tech.drivesmart.drivesmart.models.CameraSourcePreview;
+import tech.drivesmart.drivesmart.models.GraphicOverlay;
 
 import java.io.IOException;
 import java.util.ArrayList;

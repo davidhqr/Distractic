@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart;
+package tech.drivesmart.drivesmart.models;
 
 public class FrameMetadata {
 

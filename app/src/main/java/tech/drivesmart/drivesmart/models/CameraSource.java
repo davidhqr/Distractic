@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart;
+package tech.drivesmart.drivesmart.models;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -24,6 +24,8 @@ import java.util.ArrayList;
 import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
+
+import tech.drivesmart.drivesmart.processors.VisionImageProcessor;
 
 @SuppressLint("MissingPermission")
 public class CameraSource {
@@ -559,7 +561,7 @@ public class CameraSource {
     }
   }
 
-  void setMachineLearningFrameProcessor(VisionImageProcessor processor) {
+  public void setMachineLearningFrameProcessor(VisionImageProcessor processor) {
     synchronized (processorLock) {
       cleanScreen();
       if (frameProcessor != null) {

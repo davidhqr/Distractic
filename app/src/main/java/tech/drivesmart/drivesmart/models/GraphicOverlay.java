@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart;
+package tech.drivesmart.drivesmart.models;
 
 import android.content.Context;
 import android.graphics.Canvas;
