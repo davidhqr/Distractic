@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="40dp"
@@ -23,7 +24,8 @@
         android:text="LOGIN"
         android:textColor="@color/colorWhite"
         android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:ignore="DuplicateIds" />
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -62,7 +64,7 @@
     </android.support.design.widget.TextInputLayout>
 
     <TextView
-        android:id="@+id/login_text_title"
+        android:id="@+id/login_text_forgotpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
