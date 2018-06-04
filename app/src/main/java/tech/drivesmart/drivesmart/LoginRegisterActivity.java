@@ -2,6 +2,7 @@ package tech.drivesmart.drivesmart;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,15 +18,16 @@ public class LoginRegisterActivity extends AppCompatActivity {
         initFragment();
     }
 
-    private void initFragment(){
-        Fragment fragment;
-        if(pref.getBoolean(Constants.IS_LOGGED_IN,false)){
-            fragment = new ProfileFragment();
-        }else {
-            fragment = new LoginFragment();
+    private void initFragment() {
+        if (pref.getBoolean(Constants.IS_LOGGED_IN, false)) {
+            Intent profileIntent = new Intent(LoginRegisterActivity.this, ProfileActivity.class);
+            startActivity(profileIntent);
+            finish();
+        } else {
+            Fragment fragment = new LoginFragment();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.fragment_frame, fragment);
+            ft.commit();
         }
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.fragment_frame,fragment);
-        ft.commit();
     }
 }

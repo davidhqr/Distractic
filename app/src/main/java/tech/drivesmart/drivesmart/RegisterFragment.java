@@ -22,40 +22,38 @@ import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RegisterFragment extends Fragment implements View.OnClickListener{
+public class RegisterFragment extends Fragment implements View.OnClickListener {
 
     private AppCompatButton btn_register;
-    private EditText et_email,et_password,et_name;
+    private EditText et_email, et_password, et_name;
     private TextView tv_login;
     private ProgressBar progress;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_register,container,false);
+        View view = inflater.inflate(R.layout.fragment_register, container, false);
         initViews(view);
         return view;
     }
 
-    private void initViews(View view){
+    private void initViews(View view) {
 
-        btn_register = (AppCompatButton)view.findViewById(R.id.btn_register);
-        tv_login = (TextView)view.findViewById(R.id.tv_login);
-        et_name = (EditText)view.findViewById(R.id.et_name);
-        et_email = (EditText)view.findViewById(R.id.et_email);
-        et_password = (EditText)view.findViewById(R.id.et_password);
-
-        progress = (ProgressBar)view.findViewById(R.id.progress);
+        btn_register = (AppCompatButton) view.findViewById(R.id.btn_register);
+        tv_login = (TextView) view.findViewById(R.id.tv_login);
+        et_name = (EditText) view.findViewById(R.id.et_name);
+        et_email = (EditText) view.findViewById(R.id.et_email);
+        et_password = (EditText) view.findViewById(R.id.et_password);
+        progress = (ProgressBar) view.findViewById(R.id.progress);
 
         btn_register.setOnClickListener(this);
         tv_login.setOnClickListener(this);
     }
 
-
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.tv_login:
                 goToLogin();
                 break;
@@ -66,22 +64,21 @@ public class RegisterFragment extends Fragment implements View.OnClickListener{
                 String email = et_email.getText().toString();
                 String password = et_password.getText().toString();
 
-                if(!name.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
+                if (!name.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
 
                     progress.setVisibility(View.VISIBLE);
-                    registerProcess(name,email,password);
+                    registerProcess(name, email, password);
 
                 } else {
 
                     Snackbar.make(getView(), "Fields are empty !", Snackbar.LENGTH_LONG).show();
                 }
+
                 break;
-
         }
-
     }
 
-    private void registerProcess(String name, String email, String password){
+    private void registerProcess(String name, String email, String password) {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)
@@ -112,19 +109,16 @@ public class RegisterFragment extends Fragment implements View.OnClickListener{
             public void onFailure(Call<ServerResponse> call, Throwable t) {
 
                 progress.setVisibility(View.INVISIBLE);
-                Log.d(Constants.TAG,"failed");
                 Snackbar.make(getView(), t.getLocalizedMessage(), Snackbar.LENGTH_LONG).show();
-
-
             }
         });
     }
 
-    private void goToLogin(){
+    private void goToLogin() {
 
         Fragment login = new LoginFragment();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.fragment_frame,login);
+        ft.replace(R.id.fragment_frame, login);
         ft.commit();
     }
 }

@@ -18,8 +18,8 @@ public class SplashActivity extends Activity {
             @Override
             public void run() {
                 Intent mainIntent = new Intent(SplashActivity.this, LoginRegisterActivity.class);
-                SplashActivity.this.startActivity(mainIntent);
-                SplashActivity.this.finish();
+                startActivity(mainIntent);
+                finish();
             }
         }, SPLASH_DISPLAY_LENGTH);
     }

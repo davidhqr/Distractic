@@ -10,9 +10,10 @@ import com.google.firebase.ml.vision.face.FirebaseVisionFace;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceDetector;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceLandmark;
+
+import tech.drivesmart.drivesmart.CameraActivity;
 import tech.drivesmart.drivesmart.models.FrameMetadata;
 import tech.drivesmart.drivesmart.models.GraphicOverlay;
-import tech.drivesmart.drivesmart.MainActivity;
 
 import java.io.IOException;
 import java.util.List;
@@ -23,11 +24,11 @@ public class FaceDetectionProcessor extends VisionProcessorBase<List<FirebaseVis
 
   private final FirebaseVisionFaceDetector detector;
 
-  private MainActivity instance;
+  private CameraActivity instance;
 
   private int speed = 20;
 
-  public FaceDetectionProcessor(MainActivity instance) {
+  public FaceDetectionProcessor(CameraActivity instance) {
     FirebaseVisionFaceDetectorOptions options =
         new FirebaseVisionFaceDetectorOptions.Builder()
             .setModeType(FirebaseVisionFaceDetectorOptions.ACCURATE_MODE)
