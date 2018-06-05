@@ -42,8 +42,7 @@
             android:layout_marginRight="10dp"
             android:drawableRight="@drawable/ic_mail"
             android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:textColorHint="@color/colorWhite" />
+            android:inputType="textEmailAddress" />
 
     </android.support.design.widget.TextInputLayout>
 
