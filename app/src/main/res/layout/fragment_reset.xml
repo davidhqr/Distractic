@@ -25,7 +25,7 @@
             android:id="@+id/reset_text_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableRight="@drawable/ic_email"
+            android:drawableRight="@drawable/ic_mail"
             android:hint="Email"
             android:inputType="textEmailAddress"/>
 
