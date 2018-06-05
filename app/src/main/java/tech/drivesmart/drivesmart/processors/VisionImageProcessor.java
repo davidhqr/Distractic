@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart;
+package tech.drivesmart.drivesmart.processors;
 
 import android.graphics.Bitmap;
 import android.media.Image;
@@ -6,6 +6,9 @@ import android.media.Image;
 import com.google.firebase.ml.common.FirebaseMLException;
 
 import java.nio.ByteBuffer;
+
+import tech.drivesmart.drivesmart.models.FrameMetadata;
+import tech.drivesmart.drivesmart.models.GraphicOverlay;
 
 public interface VisionImageProcessor {
 

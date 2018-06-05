@@ -9,14 +9,14 @@
     android:background="#00AA8D"
     android:keepScreenOn="true">
 
-    <tech.drivesmart.drivesmart.CameraSourcePreview
+    <tech.drivesmart.drivesmart.models.CameraSourcePreview
         android:id="@+id/firePreview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true">
 
-    </tech.drivesmart.drivesmart.CameraSourcePreview>
+    </tech.drivesmart.drivesmart.models.CameraSourcePreview>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -121,7 +121,7 @@
 
     </FrameLayout>
 
-    <tech.drivesmart.drivesmart.GraphicOverlay
+    <tech.drivesmart.drivesmart.models.GraphicOverlay
         android:id="@+id/fireFaceOverlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

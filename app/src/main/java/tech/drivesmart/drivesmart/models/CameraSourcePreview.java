@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart;
+package tech.drivesmart.drivesmart.models;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,8 +12,6 @@ import android.view.ViewGroup;
 import com.google.android.gms.common.images.Size;
 
 import java.io.IOException;
-
-import tech.drivesmart.drivesmart.GraphicOverlay;
 
 public class CameraSourcePreview extends ViewGroup {
   private static final String TAG = "MIDemoApp:Preview";
