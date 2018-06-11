@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00AA8D"
+    android:background="@drawable/gradient_splash"
     android:keepScreenOn="true">
 
     <tech.drivesmart.drivesmart.models.CameraSourcePreview
