@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fireTopLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:keepScreenOn="true"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/settings_button_backbutton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/ic_back" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/settings_button_checkbutton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/ic_check" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/settings_text_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="SETTINGS"
+        android:textColor="@color/colorWhite"
+        android:textSize="28dp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/settings_image_profile"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/settings_text_settings"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/ic_profile"
+        android:foreground="@drawable/rounded_fg" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/settings_button_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_image_profile"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/round_button"
+        android:text="Edit"
+        android:textColor="@color/colorBlack"
+        android:textSize="15sp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/settings_edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_text_settings">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="10dp"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:textSize="15dp" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/settings_edit_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_edit_name"
+        android:layout_marginTop="-20dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="10dp"
+            android:hint="Phone"
+            android:inputType="text|number"
+            android:textSize="15dp" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/settings_edit_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_edit_phone"
+        android:layout_marginTop="-20dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="10dp"
+            android:hint="Location"
+            android:inputType="textNoSuggestions"
+            android:textSize="15dp" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/settings_edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_edit_location"
+        android:layout_marginTop="-20dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="10dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textSize="15dp" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/settings_button_changepassword"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_edit_email"
+        android:layout_marginLeft="165dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/round_button_colored"
+        android:text="Change Password"
+        android:textAlignment="center"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/settings_text_notifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_button_changepassword"
+        android:layout_marginLeft="10dp"
+        android:text="Notifications"
+        android:textSize="17dp" />
+
+    <LinearLayout
+        android:id="@+id/settings_sound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_text_notifications"
+        android:background="@drawable/settings_buttons"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dip"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_sound" />
+
+        <TextView
+            android:id="@+id/settings_text_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Sound"
+            android:textColor="@color/colorBlack"
+            android:textSize="18dp" />
+
+        <Switch
+            android:id="@+id/settings_toggle_sound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:paddingRight="10dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/settings_vibrate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_sound"
+        android:background="@drawable/settings_buttons"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dip"
+        android:paddingTop="10dp">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_vibrate" />
+
+
+        <TextView
+            android:id="@+id/settings_text_vibrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Vibrate"
+            android:textColor="@color/colorBlack"
+            android:textSize="18dp" />
+
+        <Switch
+            android:id="@+id/settings_toggle_vibrate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:paddingRight="10dip" />
+    </LinearLayout>
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/settings_button_invite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_vibrate"
+        android:background="@drawable/settings_buttons"
+        android:drawableLeft="@drawable/ic_invite"
+        android:drawablePadding="10dip"
+        android:drawableRight="@drawable/ic_arrow"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="15dip"
+        android:paddingRight="6dip"
+        android:text="Invite Friends"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="18dp" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/settings_button_terms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_button_invite"
+        android:background="@drawable/settings_buttons"
+        android:drawableLeft="@drawable/ic_terms"
+        android:drawablePadding="10dip"
+        android:drawableRight="@drawable/ic_arrow"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="15dip"
+        android:paddingRight="6dip"
+        android:text="Terms and Conditions"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="18dp" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/settings_button_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_button_terms"
+        android:background="@drawable/settings_buttons"
+        android:drawableLeft="@drawable/ic_logout"
+        android:drawablePadding="10dip"
+        android:drawableRight="@drawable/ic_arrow"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="15dip"
+        android:paddingRight="6dip"
+        android:text="Logout"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="18dp" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/settings_button_help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_button_logout"
+        android:background="@drawable/settings_buttons"
+        android:drawableLeft="@drawable/ic_help"
+        android:drawablePadding="10dip"
+        android:drawableRight="@drawable/ic_arrow"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="15dip"
+        android:paddingRight="6dip"
+        android:text="Help"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="18dp" />
+
+</RelativeLayout>
