@@ -25,7 +25,7 @@
         android:layout_height="60dp">
 
         <ToggleButton
-            android:id="@+id/settings"
+            android:id="@+id/camera_button_switchbutton"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center_vertical|right"

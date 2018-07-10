@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -16,6 +17,8 @@ import android.widget.TextView;
 import tech.drivesmart.drivesmart.models.ServerRequest;
 import tech.drivesmart.drivesmart.models.ServerResponse;
 import tech.drivesmart.drivesmart.models.User;
+import tech.drivesmart.drivesmart.util.Utils;
+import tech.drivesmart.drivesmart.util.Constants;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,9 +27,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RegisterFragment extends Fragment implements View.OnClickListener {
 
-    private AppCompatButton btn_register;
-    private EditText et_email, et_password, et_name;
-    private TextView tv_login;
+    private Button button_registerbutton;
+    private EditText edit_firstname, edit_lastname, edit_email, edit_password, edit_confirmpassword;
     private ProgressBar progress;
 
     @Override
@@ -39,46 +41,47 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
     private void initViews(View view) {
 
-        btn_register = (AppCompatButton) view.findViewById(R.id.btn_register);
-        tv_login = (TextView) view.findViewById(R.id.tv_login);
-        et_name = (EditText) view.findViewById(R.id.et_name);
-        et_email = (EditText) view.findViewById(R.id.et_email);
-        et_password = (EditText) view.findViewById(R.id.et_password);
-        progress = (ProgressBar) view.findViewById(R.id.progress);
+        button_registerbutton = (AppCompatButton) view.findViewById(R.id.register_button_registerbutton);
+        edit_firstname = (EditText) view.findViewById(R.id.register_edit_firstname);
+        edit_lastname = (EditText) view.findViewById(R.id.register_edit_lastname);
+        edit_email = (EditText) view.findViewById(R.id.register_edit_email);
+        edit_password = (EditText) view.findViewById(R.id.register_edit_password);
+        edit_confirmpassword = (EditText) view.findViewById(R.id.register_edit_confirmpassword);
+        progress = (ProgressBar) view.findViewById(R.id.register_progress);
 
-        btn_register.setOnClickListener(this);
-        tv_login.setOnClickListener(this);
+        button_registerbutton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.tv_login:
-                goToLogin();
-                break;
+            case R.id.register_button_registerbutton:
 
-            case R.id.btn_register:
+                String firstName = edit_firstname.getText().toString();
+                String lastName = edit_lastname.getText().toString();
+                String email = edit_email.getText().toString();
+                String password = edit_password.getText().toString();
+                String confirmPassword = edit_confirmpassword.getText().toString();
 
-                String name = et_name.getText().toString();
-                String email = et_email.getText().toString();
-                String password = et_password.getText().toString();
-
-                if (!name.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
-
-                    progress.setVisibility(View.VISIBLE);
-                    registerProcess(name, email, password);
-
-                } else {
-
-                    Snackbar.make(getView(), "Fields are empty !", Snackbar.LENGTH_LONG).show();
+                if (Utils.isEmpty(firstName, lastName, email, password, confirmPassword)) {
+                    Snackbar.make(this.getView(), "Fields are empty!", Snackbar.LENGTH_LONG).show();
+                    return;
                 }
+
+                if (!password.equals(confirmPassword)) {
+                    Snackbar.make(this.getView(), "Passwords do not match!", Snackbar.LENGTH_LONG).show();
+                    return;
+                }
+
+                progress.setVisibility(View.VISIBLE);
+                registerProcess(firstName, lastName, email, password)
 
                 break;
         }
     }
 
-    private void registerProcess(String name, String email, String password) {
+    private void registerProcess(String firstName, String lastName, String email, String password) {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)
@@ -88,7 +91,8 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         RequestInterface requestInterface = retrofit.create(RequestInterface.class);
 
         User user = new User();
-        user.setName(name);
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
         user.setEmail(email);
         user.setPassword(password);
         ServerRequest request = new ServerRequest();
@@ -118,7 +122,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
         Fragment login = new LoginFragment();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.fragment_frame, login);
+        ft.replace(R.id.loginregister_fragment_frame, login);
         ft.commit();
     }
 }
