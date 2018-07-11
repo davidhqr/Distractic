@@ -33,7 +33,7 @@
         android:layout_marginTop="8dp">
 
         <EditText
-            android:id="@+id/login_edit_enteremail"
+            android:id="@+id/login_edit_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -50,7 +50,7 @@
         android:layout_marginBottom="8dp">
 
         <EditText
-            android:id="@+id/login_edit_enterpassword"
+            android:id="@+id/login_edit_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -94,7 +94,7 @@
         android:textColor="@color/colorWhite" />
 
     <ProgressBar
-        android:id="@+id/progress"
+        android:id="@+id/login_progress"
         style="@style/Base.Widget.AppCompat.ProgressBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

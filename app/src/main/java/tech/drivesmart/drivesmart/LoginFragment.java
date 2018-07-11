@@ -19,6 +19,8 @@ import android.widget.TextView;
 import tech.drivesmart.drivesmart.models.ServerRequest;
 import tech.drivesmart.drivesmart.models.ServerResponse;
 import tech.drivesmart.drivesmart.models.User;
+import tech.drivesmart.drivesmart.util.Utils;
+import tech.drivesmart.drivesmart.util.Constants;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,9 +31,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class LoginFragment extends Fragment implements View.OnClickListener {
 
     private Activity loginRegisterActivity = getActivity();
-    private AppCompatButton btn_login;
-    private EditText et_email, et_password;
-    private TextView tv_register;
+    private Button button_loginbutton;
+    private EditText edit_email, edit_password;
+    private TextView text_register;
     private ProgressBar progress;
     private SharedPreferences pref;
 
@@ -47,14 +49,14 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
         pref = loginRegisterActivity.getPreferences(0);
 
-        btn_login = (AppCompatButton) view.findViewById(R.id.login_button_loginbutton);
-        tv_register = (TextView) view.findViewById(R.id.login_text_register);
-        et_email = (EditText) view.findViewById(R.id.et_email);
-        et_password = (EditText) view.findViewById(R.id.et_password);
-        progress = (ProgressBar) view.findViewById(R.id.progress);
+        button_loginbutton = (Button) view.findViewById(R.id.login_button_loginbutton);
+        edit_email = (EditText) view.findViewById(R.id.login_edit_email);
+        edit_password = (EditText) view.findViewById(R.id.login_edit_password);
+        text_register = (TextView) view.findViewById(R.id.login_text_register);
+        progress = (ProgressBar) view.findViewById(R.id.login_progress);
 
-        btn_login.setOnClickListener(this);
-        tv_register.setOnClickListener(this);
+        button_loginbutton.setOnClickListener(this);
+        text_register.setOnClickListener(this);
     }
 
     @Override
@@ -67,18 +69,16 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.login_button_loginbutton:
-                String email = et_email.getText().toString();
-                String password = et_password.getText().toString();
+                String email = edit_email.getText().toString();
+                String password = edit_password.getText().toString();
 
-                if (!email.isEmpty() && !password.isEmpty()) {
-
-                    progress.setVisibility(View.VISIBLE);
-                    loginProcess(email, password);
-
-                } else {
-
-                    Snackbar.make(getView(), "Fields are empty !", Snackbar.LENGTH_LONG).show();
+                if (Utils.isEmpty(email, password)) {
+                    nackbar.make(getView(), "Fields are empty!", Snackbar.LENGTH_LONG).show();
+                    return;
                 }
+
+                progress.setVisibility(View.VISIBLE);
+                loginProcess(email, password);
 
                 break;
         }
@@ -113,7 +113,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     SharedPreferences.Editor editor = pref.edit();
                     editor.putBoolean(Constants.IS_LOGGED_IN, true);
                     editor.putString(Constants.EMAIL, resp.getUser().getEmail());
-                    editor.putString(Constants.NAME, resp.getUser().getName());
+                    editor.putString(Constants.FIRST_NAME, resp.getUser().getFirstName());
+                    editor.putString(Constants.LAST_NAME, resp.getUser().getLastName());
                     editor.putString(Constants.UNIQUE_ID, resp.getUser().getUnique_id());
                     editor.apply();
                     goToProfile();
@@ -135,7 +136,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
         Fragment register = new RegisterFragment();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.fragment_frame, register);
+        ft.replace(R.id.loginregister_fragment_frame, register);
         ft.commit();
     }
 

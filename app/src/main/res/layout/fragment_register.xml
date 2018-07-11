@@ -20,7 +20,6 @@
 
         <TextView
             android:id="@+id/register_text_title"
-            tools:ignore="DuplicateIds"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -72,7 +71,7 @@
         android:layout_marginTop="-10dp">
 
         <EditText
-            android:id="@+id/register_edit_enteremail"
+            android:id="@+id/register_edit_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -90,7 +89,7 @@
         android:layout_marginTop="-10dp">
 
         <EditText
-            android:id="@+id/register_edit_enterpassword"
+            android:id="@+id/register_edit_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -137,7 +136,7 @@
         android:textColor="@color/colorWhite" />
 
     <ProgressBar
-        android:id="@+id/progress"
+        android:id="@+id/register_progress"
         style="@style/Base.Widget.AppCompat.ProgressBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

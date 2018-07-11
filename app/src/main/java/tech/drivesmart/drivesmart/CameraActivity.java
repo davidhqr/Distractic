@@ -74,9 +74,9 @@ public final class CameraActivity extends AppCompatActivity
             Log.d(TAG, "graphicOverlay is null");
         }
 
-        ToggleButton facingSwitch = (ToggleButton) findViewById(R.id.facingswitch);
+        ToggleButton facingSwitch = (ToggleButton) findViewById(R.id.camera_button_switchbutton);
         facingSwitch.setOnCheckedChangeListener(this);
-        Button button = (Button) findViewById(R.id.calibratebutton);
+        Button button = (Button) findViewById(R.id.camera_button_calibratebutton);
         button.setOnClickListener(this);
         status = (TextView) findViewById(R.id.status);
         debug = (TextView) findViewById(R.id.debug);

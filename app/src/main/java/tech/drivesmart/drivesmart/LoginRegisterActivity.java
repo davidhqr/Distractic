@@ -7,6 +7,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import tech.drivesmart.drivesmart.util.Constants;
+
 public class LoginRegisterActivity extends AppCompatActivity {
     private SharedPreferences pref;
 
@@ -26,7 +28,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
         } else {
             Fragment fragment = new LoginFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.replace(R.id.fragment_frame, fragment);
+            ft.replace(R.id.loginregister_fragment_frame, fragment);
             ft.commit();
         }
     }
