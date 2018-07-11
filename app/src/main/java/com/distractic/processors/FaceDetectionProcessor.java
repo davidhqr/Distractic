@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart.processors;
+package com.distractic.processors;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -11,9 +11,9 @@ import com.google.firebase.ml.vision.face.FirebaseVisionFaceDetector;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceLandmark;
 
-import tech.drivesmart.drivesmart.CameraActivity;
-import tech.drivesmart.drivesmart.models.FrameMetadata;
-import tech.drivesmart.drivesmart.models.GraphicOverlay;
+import com.distractic.CameraActivity;
+import com.distractic.models.FrameMetadata;
+import com.distractic.models.GraphicOverlay;
 
 import java.io.IOException;
 import java.util.List;

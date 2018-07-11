@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart.models;
+package com.distractic.models;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -8,8 +8,7 @@ import com.google.android.gms.vision.CameraSource;
 import com.google.firebase.ml.vision.common.FirebaseVisionPoint;
 import com.google.firebase.ml.vision.face.FirebaseVisionFace;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceLandmark;
-import tech.drivesmart.drivesmart.models.GraphicOverlay;
-import tech.drivesmart.drivesmart.models.GraphicOverlay.Graphic;
+import com.distractic.models.GraphicOverlay.Graphic;
 
 public class FaceGraphic extends Graphic {
   private static final float FACE_POSITION_RADIUS = 10.0f;

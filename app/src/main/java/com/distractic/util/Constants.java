@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart;
+package com.distractic.util;
 
 public class Constants {
     public static final String BASE_URL = "http://138.197.151.168/";

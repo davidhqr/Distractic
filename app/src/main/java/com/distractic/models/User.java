@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart.models;
+package com.distractic.models;
 
 public class User {
 

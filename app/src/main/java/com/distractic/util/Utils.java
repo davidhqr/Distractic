@@ -1,4 +1,7 @@
-package tech.drivesmart.drivesmart.util;
+package com.distractic.util;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Utils {
     public static boolean isEmpty(String... strs) {
