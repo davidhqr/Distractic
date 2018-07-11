@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart;
+package com.distractic;
 
 import android.app.Activity;
 import android.content.Intent;

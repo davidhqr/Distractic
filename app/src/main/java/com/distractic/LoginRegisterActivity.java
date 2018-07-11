@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart;
+package com.distractic;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -7,7 +7,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import tech.drivesmart.drivesmart.util.Constants;
+import com.distractic.util.Constants;
+
 
 public class LoginRegisterActivity extends AppCompatActivity {
     private SharedPreferences pref;

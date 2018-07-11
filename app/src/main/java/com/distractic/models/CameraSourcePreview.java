@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart.models;
+package com.distractic.models;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

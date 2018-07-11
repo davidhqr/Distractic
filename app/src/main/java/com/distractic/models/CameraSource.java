@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart.models;
+package com.distractic.models;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -25,7 +25,7 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
 
-import tech.drivesmart.drivesmart.processors.VisionImageProcessor;
+import com.distractic.processors.VisionImageProcessor;
 
 @SuppressLint("MissingPermission")
 public class CameraSource {

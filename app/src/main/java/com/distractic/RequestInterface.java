@@ -1,7 +1,7 @@
-package tech.drivesmart.drivesmart;
+package com.distractic;
 
-import tech.drivesmart.drivesmart.models.ServerRequest;
-import tech.drivesmart.drivesmart.models.ServerResponse;
+import com.distractic.models.ServerRequest;
+import com.distractic.models.ServerResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

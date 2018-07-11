@@ -1,24 +1,22 @@
-package tech.drivesmart.drivesmart;
+package com.distractic;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.AppCompatButton;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
-import tech.drivesmart.drivesmart.models.ServerRequest;
-import tech.drivesmart.drivesmart.models.ServerResponse;
-import tech.drivesmart.drivesmart.models.User;
-import tech.drivesmart.drivesmart.util.Utils;
-import tech.drivesmart.drivesmart.util.Constants;
+import com.distractic.models.ServerRequest;
+import com.distractic.models.ServerResponse;
+import com.distractic.models.User;
+import com.distractic.util.Utils;
+import com.distractic.util.Constants;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -75,7 +73,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                 }
 
                 progress.setVisibility(View.VISIBLE);
-                registerProcess(firstName, lastName, email, password)
+                registerProcess(firstName, lastName, email, password);
 
                 break;
         }
