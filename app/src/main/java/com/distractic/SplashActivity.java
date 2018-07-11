@@ -1,13 +1,13 @@
-package tech.drivesmart.drivesmart;
+package com.distractic;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-public class SplashActivity extends Activity {
+import com.distractic.util.Constants;
 
-    private final int SPLASH_DISPLAY_LENGTH = 1500;
+public class SplashActivity extends Activity {
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -21,6 +21,6 @@ public class SplashActivity extends Activity {
                 startActivity(mainIntent);
                 finish();
             }
-        }, SPLASH_DISPLAY_LENGTH);
+        }, Constants.SPLASH_DISPLAY_LENGTH);
     }
 }

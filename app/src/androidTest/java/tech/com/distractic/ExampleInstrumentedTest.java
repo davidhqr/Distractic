@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart;
+package tech.com.distractic;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

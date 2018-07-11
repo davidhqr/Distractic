@@ -8,24 +8,12 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:212346925631:android:3a6980661c3cd41e",
+        "mobilesdk_app_id": "1:212346925631:android:9d5d866bc32ae39d",
         "android_client_info": {
-          "package_name": "tech.drivesmart.drivesmart"
+          "package_name": "com.distractic"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "212346925631-41uar09cndfihgajn1nr9f2vtpujikba.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "tech.drivesmart.drivesmart",
-            "certificate_hash": "f15960b1f549e89aec6d1c18eb122b2f5a33bdf0"
-          }
-        },
-        {
-          "client_id": "212346925631-uransgl8q9o25kmjft7ga9vjaehu10bb.apps.googleusercontent.com",
-          "client_type": 3
-        },
         {
           "client_id": "212346925631-uransgl8q9o25kmjft7ga9vjaehu10bb.apps.googleusercontent.com",
           "client_type": 3
@@ -41,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "212346925631-uransgl8q9o25kmjft7ga9vjaehu10bb.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

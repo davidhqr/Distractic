@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart.processors;
+package com.distractic.processors;
 
 import android.graphics.Bitmap;
 import android.media.Image;
@@ -13,8 +13,8 @@ import com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata;
 import java.nio.ByteBuffer;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import tech.drivesmart.drivesmart.models.FrameMetadata;
-import tech.drivesmart.drivesmart.models.GraphicOverlay;
+import com.distractic.models.FrameMetadata;
+import com.distractic.models.GraphicOverlay;
 
 public abstract class VisionProcessorBase<T> implements VisionImageProcessor {
 

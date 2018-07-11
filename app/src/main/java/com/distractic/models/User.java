@@ -1,11 +1,11 @@
-package tech.drivesmart.drivesmart.models;
+package com.distractic.models;
 
 public class User {
 
     private String firstName;
     private String lastName;
     private String email;
-    private String unique_id;
+    private String uniqueId;
     private String password;
 
     public String getFirstName() {
@@ -32,12 +32,12 @@ public class User {
         this.email = email;
     }
 
-    public String getUnique_id() {
-        return unique_id;
+    public String getUniqueId() {
+        return uniqueId;
     }
 
-    public void setUnique_id(String unique_id) {
-        this.unique_id = unique_id;
+    public void setUniqueId(String uniqueId) {
+        this.uniqueId = uniqueId;
     }
 
     public String getPassword() {

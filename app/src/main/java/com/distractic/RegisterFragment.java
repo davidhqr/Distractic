@@ -1,24 +1,21 @@
-package tech.drivesmart.drivesmart;
+package com.distractic;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.AppCompatButton;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
-import tech.drivesmart.drivesmart.models.ServerRequest;
-import tech.drivesmart.drivesmart.models.ServerResponse;
-import tech.drivesmart.drivesmart.models.User;
-import tech.drivesmart.drivesmart.util.Utils;
-import tech.drivesmart.drivesmart.util.Constants;
+import com.distractic.models.ServerRequest;
+import com.distractic.models.ServerResponse;
+import com.distractic.models.User;
+import com.distractic.util.Utils;
+import com.distractic.util.Constants;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,21 +38,21 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
     private void initViews(View view) {
 
-        button_registerbutton = (AppCompatButton) view.findViewById(R.id.register_button_registerbutton);
-        edit_firstname = (EditText) view.findViewById(R.id.register_edit_firstname);
-        edit_lastname = (EditText) view.findViewById(R.id.register_edit_lastname);
-        edit_email = (EditText) view.findViewById(R.id.register_edit_email);
-        edit_password = (EditText) view.findViewById(R.id.register_edit_password);
-        edit_confirmpassword = (EditText) view.findViewById(R.id.register_edit_confirmpassword);
-        progress = (ProgressBar) view.findViewById(R.id.register_progress);
+        button_registerbutton = view.findViewById(R.id.register_button_registerbutton);
+        edit_firstname = view.findViewById(R.id.register_edit_firstname);
+        edit_lastname = view.findViewById(R.id.register_edit_lastname);
+        edit_email = view.findViewById(R.id.register_edit_email);
+        edit_password = view.findViewById(R.id.register_edit_password);
+        edit_confirmpassword = view.findViewById(R.id.register_edit_confirmpassword);
+        progress = view.findViewById(R.id.register_progress);
 
         button_registerbutton.setOnClickListener(this);
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View view) {
 
-        switch (v.getId()) {
+        switch (view.getId()) {
             case R.id.register_button_registerbutton:
 
                 String firstName = edit_firstname.getText().toString();
@@ -75,7 +72,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                 }
 
                 progress.setVisibility(View.VISIBLE);
-                registerProcess(firstName, lastName, email, password)
+                registerProcess(firstName, lastName, email, password);
 
                 break;
         }

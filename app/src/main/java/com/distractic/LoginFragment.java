@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart;
+package com.distractic;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -7,26 +7,24 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.AppCompatButton;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import tech.drivesmart.drivesmart.models.ServerRequest;
-import tech.drivesmart.drivesmart.models.ServerResponse;
-import tech.drivesmart.drivesmart.models.User;
-import tech.drivesmart.drivesmart.util.Utils;
-import tech.drivesmart.drivesmart.util.Constants;
+import com.distractic.models.ServerRequest;
+import com.distractic.models.ServerResponse;
+import com.distractic.models.User;
+import com.distractic.util.Utils;
+import com.distractic.util.Constants;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
 
 public class LoginFragment extends Fragment implements View.OnClickListener {
 
@@ -49,20 +47,20 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
         pref = loginRegisterActivity.getPreferences(0);
 
-        button_loginbutton = (Button) view.findViewById(R.id.login_button_loginbutton);
-        edit_email = (EditText) view.findViewById(R.id.login_edit_email);
-        edit_password = (EditText) view.findViewById(R.id.login_edit_password);
-        text_register = (TextView) view.findViewById(R.id.login_text_register);
-        progress = (ProgressBar) view.findViewById(R.id.login_progress);
+        button_loginbutton = view.findViewById(R.id.login_button_loginbutton);
+        edit_email = view.findViewById(R.id.login_edit_email);
+        edit_password = view.findViewById(R.id.login_edit_password);
+        text_register = view.findViewById(R.id.login_text_register);
+        progress = view.findViewById(R.id.login_progress);
 
         button_loginbutton.setOnClickListener(this);
         text_register.setOnClickListener(this);
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View view) {
 
-        switch (v.getId()) {
+        switch (view.getId()) {
 
             case R.id.login_text_register:
                 goToRegister();
@@ -73,7 +71,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 String password = edit_password.getText().toString();
 
                 if (Utils.isEmpty(email, password)) {
-                    nackbar.make(getView(), "Fields are empty!", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(getView(), "Fields are empty!", Snackbar.LENGTH_LONG).show();
                     return;
                 }
 
@@ -115,7 +113,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     editor.putString(Constants.EMAIL, resp.getUser().getEmail());
                     editor.putString(Constants.FIRST_NAME, resp.getUser().getFirstName());
                     editor.putString(Constants.LAST_NAME, resp.getUser().getLastName());
-                    editor.putString(Constants.UNIQUE_ID, resp.getUser().getUnique_id());
+                    editor.putString(Constants.UNIQUE_ID, resp.getUser().getUniqueId());
                     editor.apply();
                     goToProfile();
                 }

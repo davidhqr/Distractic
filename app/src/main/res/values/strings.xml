@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">DriveSmart</string>
+    <string name="app_name">Distractic</string>
     <string name="forgot_password"><u>Forgot Password?</u></string>
     <string name="sign_up"><u>sign up</u></string>
 </resources>

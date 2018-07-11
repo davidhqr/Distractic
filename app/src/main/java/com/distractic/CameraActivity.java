@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart;
+package com.distractic;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -23,13 +23,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import com.google.android.gms.common.annotation.KeepName;
 import com.google.firebase.ml.vision.face.FirebaseVisionFace;
 
-import tech.drivesmart.drivesmart.processors.FaceDetectionProcessor;
-import tech.drivesmart.drivesmart.models.CameraSource;
-import tech.drivesmart.drivesmart.models.CameraSourcePreview;
-import tech.drivesmart.drivesmart.models.GraphicOverlay;
+import com.distractic.processors.FaceDetectionProcessor;
+import com.distractic.models.CameraSource;
+import com.distractic.models.CameraSourcePreview;
+import com.distractic.models.GraphicOverlay;
 
 import java.io.IOException;
 import java.util.ArrayList;
