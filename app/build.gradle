@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "tech.drivesmart.drivesmart"
+        applicationId "com.distractic"
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
@@ -29,5 +29,8 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-core:15.0.2'
     implementation 'com.google.firebase:firebase-ml-vision:15.0.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.0.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.0'
+    implementation 'com.android.support:design:27.1.1'
 }
 apply plugin: 'com.google.gms.google-services'
