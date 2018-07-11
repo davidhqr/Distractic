@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.distractic.util.Constants;
 
-
 public class LoginRegisterActivity extends AppCompatActivity {
     private SharedPreferences pref;
 
@@ -27,9 +26,9 @@ public class LoginRegisterActivity extends AppCompatActivity {
             startActivity(profileIntent);
             finish();
         } else {
-            Fragment fragment = new LoginFragment();
+            Fragment loginFragment = new LoginFragment();
             FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.replace(R.id.loginregister_fragment_frame, fragment);
+            ft.replace(R.id.loginregister_fragment_frame, loginFragment);
             ft.commit();
         }
     }

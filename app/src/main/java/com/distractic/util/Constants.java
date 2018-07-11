@@ -15,5 +15,5 @@ public class Constants {
     public static final String EMAIL = "email";
     public static final String UNIQUE_ID = "unique_id";
 
-    public static final String TAG = "Distractic";
+    public static final int SPLASH_DISPLAY_LENGTH = 1500;
 }

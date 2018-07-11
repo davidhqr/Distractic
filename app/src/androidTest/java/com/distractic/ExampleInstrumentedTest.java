@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart;
+package com.distractic;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.vision.vision", appContext.getPackageName());
+        assertEquals("com.distractic", appContext.getPackageName());
     }
 }

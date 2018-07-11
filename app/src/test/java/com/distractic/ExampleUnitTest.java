@@ -1,4 +1,4 @@
-package tech.drivesmart.drivesmart;
+package com.distractic;
 
 import org.junit.Test;
 
