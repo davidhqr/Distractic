@@ -48,20 +48,20 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
         pref = loginRegisterActivity.getPreferences(0);
 
-        button_loginbutton = (Button) view.findViewById(R.id.login_button_loginbutton);
-        edit_email = (EditText) view.findViewById(R.id.login_edit_email);
-        edit_password = (EditText) view.findViewById(R.id.login_edit_password);
-        text_register = (TextView) view.findViewById(R.id.login_text_register);
-        progress = (ProgressBar) view.findViewById(R.id.login_progress);
+        button_loginbutton = view.findViewById(R.id.login_button_loginbutton);
+        edit_email = view.findViewById(R.id.login_edit_email);
+        edit_password = view.findViewById(R.id.login_edit_password);
+        text_register = view.findViewById(R.id.login_text_register);
+        progress = view.findViewById(R.id.login_progress);
 
         button_loginbutton.setOnClickListener(this);
         text_register.setOnClickListener(this);
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View view) {
 
-        switch (v.getId()) {
+        switch (view.getId()) {
 
             case R.id.login_text_register:
                 goToRegister();
@@ -133,9 +133,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     private void goToRegister() {
 
-        Fragment register = new RegisterFragment();
+        Fragment registerFragment = new RegisterFragment();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.loginregister_fragment_frame, register);
+        ft.replace(R.id.loginregister_fragment_frame, registerFragment);
         ft.commit();
     }
 
