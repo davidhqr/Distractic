@@ -4,7 +4,6 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.AppCompatButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,13 +38,13 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
     private void initViews(View view) {
 
-        button_registerbutton = (AppCompatButton) view.findViewById(R.id.register_button_registerbutton);
-        edit_firstname = (EditText) view.findViewById(R.id.register_edit_firstname);
-        edit_lastname = (EditText) view.findViewById(R.id.register_edit_lastname);
-        edit_email = (EditText) view.findViewById(R.id.register_edit_email);
-        edit_password = (EditText) view.findViewById(R.id.register_edit_password);
-        edit_confirmpassword = (EditText) view.findViewById(R.id.register_edit_confirmpassword);
-        progress = (ProgressBar) view.findViewById(R.id.register_progress);
+        button_registerbutton = view.findViewById(R.id.register_button_registerbutton);
+        edit_firstname = view.findViewById(R.id.register_edit_firstname);
+        edit_lastname = view.findViewById(R.id.register_edit_lastname);
+        edit_email = view.findViewById(R.id.register_edit_email);
+        edit_password = view.findViewById(R.id.register_edit_password);
+        edit_confirmpassword = view.findViewById(R.id.register_edit_confirmpassword);
+        progress = view.findViewById(R.id.register_progress);
 
         button_registerbutton.setOnClickListener(this);
     }
@@ -118,9 +117,9 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
     private void goToLogin() {
 
-        Fragment login = new LoginFragment();
+        Fragment loginFragment = new LoginFragment();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.loginregister_fragment_frame, login);
+        ft.replace(R.id.loginregister_fragment_frame, loginFragment);
         ft.commit();
     }
 }
