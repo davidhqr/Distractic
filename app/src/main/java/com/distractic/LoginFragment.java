@@ -29,7 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginFragment extends Fragment implements View.OnClickListener {
 
-    private Activity loginRegisterActivity = getActivity();
+    private Activity loginRegisterActivity;
     private Button button_loginbutton;
     private EditText edit_email, edit_password;
     private TextView text_register;
@@ -38,7 +38,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+        loginRegisterActivity = this.getActivity();
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         initViews(view);
         return view;

@@ -6,7 +6,7 @@
               android:layout_height="match_parent"
               android:background="@color/colorPrimary"
               android:orientation="vertical"
-              tools:context="tech.drivesmart.drivesmart.com.distractic.ProfileActivity">
+              tools:context="com.distractic.ProfileActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
                 android:textStyle="bold"/>
         </LinearLayout>
 
-        <android.support.v7.widget.CardView
+        <!--<android.support.v7.widget.CardView
             android:layout_width="400dp"
             android:layout_height="120dp"
             android:layout_centerHorizontal="true"
@@ -124,7 +124,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </android.support.v7.widget.CardView>-->
     </RelativeLayout>
 
     <LinearLayout

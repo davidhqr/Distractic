@@ -29,6 +29,10 @@
             android:label="@string/app_name">
         </activity>
         <activity
+            android:name="com.distractic.ProfileActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
             android:name="com.distractic.CameraActivity"
             android:label="@string/app_name">
         </activity>
