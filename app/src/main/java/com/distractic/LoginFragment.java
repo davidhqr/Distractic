@@ -48,7 +48,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
         pref = loginRegisterActivity.getPreferences(0);
 
-        button_loginbutton = view.findViewById(R.id.login_button_loginButton);
+        button_loginbutton = view.findViewById(R.id.login_button_loginbutton);
         edit_email = view.findViewById(R.id.login_edit_email);
         edit_password = view.findViewById(R.id.login_edit_password);
         text_register = view.findViewById(R.id.login_text_register);
@@ -67,7 +67,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 goToRegister();
                 break;
 
-            case R.id.login_button_loginButton:
+            case R.id.login_button_loginbutton:
                 String email = edit_email.getText().toString();
                 String password = edit_password.getText().toString();
 
