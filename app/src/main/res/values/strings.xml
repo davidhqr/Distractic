@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Distractic</string>
-    <string name="forgot_password"><u>Forgot Password?</u></string>
-    <string name="sign_up"><u>sign up</u></string>
+    <string name="login_loginTitle">LOGIN</string>
+    <string name="login_emailHint">Email</string>
+    <string name="login_passwordHint">Password</string>
+    <string name="login_forgotPasswordText"><u>Forgot Password?</u></string>
+    <string name="login_loginButton">LOGIN</string>
+    <string name="login_signUpText">Don\'t have an account?\n<u>Sign up now!</u></string>
 </resources>
