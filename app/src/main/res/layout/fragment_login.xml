@@ -8,10 +8,9 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/login_image_distracticLogo"
         android:layout_width="match_parent"
         android:layout_height="90dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="50dp"
         android:src="@drawable/full_logo" />
 
@@ -19,11 +18,11 @@
         android:id="@+id/login_text_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:text="@string/login_loginTitle"
+        android:text="LOGIN"
         android:textColor="@color/colorWhite"
-        android:textSize="20sp"
+        android:textSize="20dp"
         android:textStyle="bold"
         tools:ignore="DuplicateIds" />
 
@@ -39,8 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:drawableEnd="@drawable/ic_mail"
-            android:hint="@string/login_emailHint"
+            android:drawableRight="@drawable/ic_mail"
+            android:hint="Email"
             android:inputType="textEmailAddress" />
 
     </android.support.design.widget.TextInputLayout>
@@ -56,32 +55,32 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:drawableEnd="@drawable/ic_key"
-            android:hint="@string/login_passwordHint"
+            android:drawableRight="@drawable/ic_key"
+            android:hint="Password"
             android:inputType="textPassword" />
 
     </android.support.design.widget.TextInputLayout>
 
     <TextView
-        android:id="@+id/login_text_forgotPassword"
+        android:id="@+id/login_text_forgotpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="-10dp"
-        android:gravity="end"
-        android:text="@string/login_forgotPasswordText"
+        android:gravity="right"
+        android:text="Forgot Password?"
         android:textAlignment="gravity"
         android:textColor="@color/colorWhite"
-        android:textSize="12sp" />
+        android:textSize="12dp" />
 
 
     <android.support.v7.widget.AppCompatButton
-        android:id="@+id/login_button_loginButton"
+        android:id="@+id/login_button_loginbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_button"
-        android:text="@string/login_loginButton"
+        android:text="Login"
         android:textColor="@android:color/white" />
 
     <TextView
@@ -89,7 +88,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/login_signUpText"
+        android:text="Dont' have an account?
+          Sign up now!"
         android:textAlignment="center"
         android:textColor="@color/colorWhite" />
 
