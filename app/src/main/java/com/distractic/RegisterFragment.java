@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.distractic.models.ServerRequest;
 import com.distractic.models.ServerResponse;
@@ -26,6 +27,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
     private Button button_registerbutton;
     private EditText edit_firstname, edit_lastname, edit_email, edit_password, edit_confirmpassword;
+    private TextView text_login;
     private ProgressBar progress;
 
     @Override
@@ -43,16 +45,22 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         edit_lastname = view.findViewById(R.id.register_edit_lastname);
         edit_email = view.findViewById(R.id.register_edit_email);
         edit_password = view.findViewById(R.id.register_edit_password);
-        edit_confirmpassword = view.findViewById(R.id.register_edit_confirmpassword);
+        edit_confirmpassword = view.findViewById(R.id.register_edit_confirmPassword);
+        text_login = view.findViewById(R.id.register_text_login);
         progress = view.findViewById(R.id.register_progress);
 
         button_registerbutton.setOnClickListener(this);
+        text_login.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
+            case R.id.register_text_login:
+                goToLogin();
+                break;
+
             case R.id.register_button_registerbutton:
 
                 String firstName = edit_firstname.getText().toString();
