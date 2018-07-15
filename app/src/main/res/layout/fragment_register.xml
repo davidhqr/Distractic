@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradient_register"
-    android:gravity="center"
-    android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/gradient_register"
+              android:gravity="center"
+              android:orientation="vertical">
 
     <ImageView
         android:layout_width="match_parent"
@@ -12,7 +12,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:contentDescription="@string/description_distracticLogo"
-        android:src="@drawable/full_logo" />
+        android:src="@drawable/full_logo"/>
 
 
     <android.support.design.widget.TextInputLayout
@@ -23,13 +23,13 @@
             android:id="@+id/register_text_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
             android:text="@string/register_registerTitle"
             android:textColor="@color/colorWhite"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -44,9 +44,9 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:drawableEnd="@drawable/ic_person"
-            android:textColor="@color/colorWhite"
             android:hint="@string/register_firstNameHint"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="@color/colorWhite"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -60,10 +60,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:drawableEnd ="@drawable/ic_person"
-            android:textColor="@color/colorWhite"
+            android:drawableEnd="@drawable/ic_person"
             android:hint="@string/register_lastNameHint"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="@color/colorWhite"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -79,10 +79,10 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:drawableEnd="@drawable/ic_mail"
-            android:textColor="@color/colorWhite"
             android:hint="@string/register_emailHint"
             android:inputType="textEmailAddress"
-            android:textColorHint="@color/colorWhite" />
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -97,9 +97,9 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:drawableEnd="@drawable/ic_key"
-            android:textColor="@color/colorWhite"
             android:hint="@string/register_passwordHint"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/colorWhite"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -114,9 +114,9 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:drawableEnd="@drawable/ic_key"
-            android:textColor="@color/colorWhite"
             android:hint="@string/register_confirmPasswordHint"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/colorWhite"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -127,7 +127,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/round_button"
         android:text="@string/register_registerButton"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"/>
 
     <TextView
         android:id="@+id/register_text_login"
@@ -136,7 +136,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/register_loginText"
         android:textAlignment="center"
-        android:textColor="@color/colorWhite" />
+        android:textColor="@color/colorWhite"/>
 
     <ProgressBar
         android:id="@+id/register_progress"
@@ -145,6 +145,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:indeterminate="true"
-        android:visibility="invisible" />
+        android:visibility="invisible"/>
 
 </LinearLayout>

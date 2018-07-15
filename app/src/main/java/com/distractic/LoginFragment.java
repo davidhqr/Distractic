@@ -46,7 +46,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     private void initViews(View view) {
 
-        pref = loginRegisterActivity.getPreferences(0);
+        pref = loginRegisterActivity.getSharedPreferences("info", 0);
 
         button_loginbutton = view.findViewById(R.id.login_button_loginButton);
         edit_email = view.findViewById(R.id.login_edit_email);
