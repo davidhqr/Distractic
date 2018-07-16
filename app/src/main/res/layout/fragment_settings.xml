@@ -278,7 +278,6 @@
         android:paddingLeft="15dip"
         android:paddingRight="6dip"
         android:text="Terms and Conditions"
-        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@android:color/black"
         android:textSize="18dp"/>
@@ -296,7 +295,6 @@
         android:paddingLeft="15dip"
         android:paddingRight="6dip"
         android:text="Logout"
-        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@android:color/black"
         android:textSize="18dp"/>
@@ -314,7 +312,6 @@
         android:paddingLeft="15dip"
         android:paddingRight="6dip"
         android:text="Help"
-        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@android:color/black"
         android:textSize="18dp"/>
