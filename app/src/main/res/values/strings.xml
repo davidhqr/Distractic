@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Distractic</string>
-    <string name="forgot_password"><u>Forgot Password?</u></string>
-    <string name="sign_up"><u>sign up</u></string>
+    <string name="description_distracticLogo">This is the Distractic logo.</string>
+
+    <string name="login_loginTitle">LOGIN</string>
+    <string name="login_emailHint">Email</string>
+    <string name="login_passwordHint">Password</string>
+    <string name="login_forgotPasswordText"><u>Forgot Password?</u></string>
+    <string name="login_loginButton">LOGIN</string>
+    <string name="login_registerText">Don\'t have an account?\n<u>Register now!</u></string>
+
+    <string name="register_registerTitle">REGISTER</string>
+    <string name="register_firstNameHint">First Name</string>
+    <string name="register_lastNameHint">Last Name</string>
+    <string name="register_emailHint">Email</string>
+    <string name="register_passwordHint">Password</string>
+    <string name="register_confirmPasswordHint">Confirm Password</string>
+    <string name="register_registerButton">REGISTER</string>
+    <string name="register_loginText">Already have an account?\n<u>Login now!</u></string>
+
+    <string name="profile_startDrivingButton">START DRIVING</string>
 </resources>
