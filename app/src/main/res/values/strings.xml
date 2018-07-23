@@ -20,4 +20,5 @@
     <string name="register_loginText">Already have an account?\n<u>Login now!</u></string>
 
     <string name="profile_startDrivingButton">START DRIVING</string>
+    <string name="profile_logoutButton">LOGOUT</string>
 </resources>

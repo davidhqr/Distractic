@@ -2,8 +2,10 @@ package com.distractic;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Camera;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -64,19 +66,21 @@ public final class CameraActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
-        preview = (CameraSourcePreview) findViewById(R.id.firePreview);
+        preview = findViewById(R.id.firePreview);
         if (preview == null) {
             Log.d(TAG, "Preview is null");
         }
-        graphicOverlay = (GraphicOverlay) findViewById(R.id.fireFaceOverlay);
+        graphicOverlay = findViewById(R.id.fireFaceOverlay);
         if (graphicOverlay == null) {
             Log.d(TAG, "graphicOverlay is null");
         }
 
-        ToggleButton facingSwitch = (ToggleButton) findViewById(R.id.camera_button_switchbutton);
+        ToggleButton facingSwitch = findViewById(R.id.camera_button_switchCamera);
         facingSwitch.setOnCheckedChangeListener(this);
-        Button button = (Button) findViewById(R.id.camera_button_calibratebutton);
-        button.setOnClickListener(this);
+        Button button_calibrate = findViewById(R.id.camera_button_calibrate);
+        button_calibrate.setOnClickListener(this);
+        Button button_stopDriving = findViewById(R.id.camera_button_stopDriving);
+        button_stopDriving.setOnClickListener(this);
         status = (TextView) findViewById(R.id.status);
         debug = (TextView) findViewById(R.id.debug);
 
@@ -138,16 +142,24 @@ public final class CameraActivity extends AppCompatActivity
 
     @Override
     public void onClick(View view) {
-        if (updatingFace != null) {
-            calibratedFace = updatingFace;
-            trueDistracted = false;
-            distractedX = false;
-            distractedY = false;
-            Toast.makeText(this, "Resting face position calibrated",
-                    Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Error: No face found",
-                    Toast.LENGTH_SHORT).show();
+        switch(view.getId()) {
+            case R.id.camera_button_calibrate:
+                if (updatingFace != null) {
+                    calibratedFace = updatingFace;
+                    trueDistracted = false;
+                    distractedX = false;
+                    distractedY = false;
+                    Toast.makeText(this, "Resting face position calibrated",
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Error: No face found",
+                            Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.camera_button_stopDriving:
+                Intent profileIntent = new Intent(CameraActivity.this, ProfileActivity.class);
+                startActivity(profileIntent);
+                break;
         }
     }
 

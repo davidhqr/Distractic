@@ -16,8 +16,8 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="40dp"
                 android:contentDescription="@string/description_distracticLogo"
@@ -49,17 +49,27 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="vertical"
-        android:paddingBottom="10dp"
+        android:padding="15dp"
         android:background="@drawable/profile_rounded">
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/register_button_registerbutton"
+            android:id="@+id/profile_button_startDriving"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/round_button_colored"
+            android:text="@string/profile_startDrivingButton"
+            android:textColor="@color/control_background"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/profile_button_logout"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:background="@drawable/round_button_colored"
-            android:text="@string/profile_startDrivingButton"
+            android:text="@string/profile_logoutButton"
             android:textColor="@color/control_background"/>
     </RelativeLayout>
 </LinearLayout>
