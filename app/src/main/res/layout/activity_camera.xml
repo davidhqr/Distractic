@@ -25,7 +25,7 @@
         android:layout_height="60dp">
 
         <ToggleButton
-            android:id="@+id/camera_button_switchbutton"
+            android:id="@+id/camera_button_switchCamera"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center_vertical|right"
@@ -94,7 +94,7 @@
         android:layout_toEndOf="@id/firePreview">
 
         <Button
-            android:id="@+id/camera_button_calibratebutton"
+            android:id="@+id/camera_button_calibrate"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
@@ -105,7 +105,7 @@
 
 
         <Button
-            android:id="@+id/camera_button_stopdrivingbutton"
+            android:id="@+id/camera_button_stopDriving"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
