@@ -25,32 +25,33 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RegisterFragment extends Fragment implements View.OnClickListener {
 
-    private Button button_registerbutton;
-    private EditText edit_firstname, edit_lastname, edit_email, edit_password, edit_confirmpassword;
-    private TextView text_login;
+    private View loginRegisterView;
+    private Button registerButton;
+    private EditText firstNameEdit, lastNameEdit, emailEdit, passwordEdit, confirmPasswordEdit;
+    private TextView loginText;
     private ProgressBar progress;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_register, container, false);
-        initViews(view);
-        return view;
+        loginRegisterView = inflater.inflate(R.layout.fragment_register, container, false);
+        initViews();
+        return loginRegisterView;
     }
 
-    private void initViews(View view) {
+    private void initViews() {
 
-        button_registerbutton = view.findViewById(R.id.register_button_registerbutton);
-        edit_firstname = view.findViewById(R.id.register_edit_firstname);
-        edit_lastname = view.findViewById(R.id.register_edit_lastname);
-        edit_email = view.findViewById(R.id.register_edit_email);
-        edit_password = view.findViewById(R.id.register_edit_password);
-        edit_confirmpassword = view.findViewById(R.id.register_edit_confirmPassword);
-        text_login = view.findViewById(R.id.register_text_login);
-        progress = view.findViewById(R.id.register_progress);
+        registerButton = loginRegisterView.findViewById(R.id.register_button_registerbutton);
+        firstNameEdit = loginRegisterView.findViewById(R.id.register_edit_firstName);
+        lastNameEdit = loginRegisterView.findViewById(R.id.register_edit_lastName);
+        emailEdit = loginRegisterView.findViewById(R.id.register_edit_email);
+        passwordEdit = loginRegisterView.findViewById(R.id.register_edit_password);
+        confirmPasswordEdit = loginRegisterView.findViewById(R.id.register_edit_confirmPassword);
+        loginText = loginRegisterView.findViewById(R.id.register_text_login);
+        progress = loginRegisterView.findViewById(R.id.register_progress);
 
-        button_registerbutton.setOnClickListener(this);
-        text_login.setOnClickListener(this);
+        registerButton.setOnClickListener(this);
+        loginText.setOnClickListener(this);
     }
 
     @Override
@@ -63,19 +64,19 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
             case R.id.register_button_registerbutton:
 
-                String firstName = edit_firstname.getText().toString();
-                String lastName = edit_lastname.getText().toString();
-                String email = edit_email.getText().toString();
-                String password = edit_password.getText().toString();
-                String confirmPassword = edit_confirmpassword.getText().toString();
+                String firstName = firstNameEdit.getText().toString();
+                String lastName = lastNameEdit.getText().toString();
+                String email = emailEdit.getText().toString();
+                String password = passwordEdit.getText().toString();
+                String confirmPassword = confirmPasswordEdit.getText().toString();
 
                 if (Utils.isEmpty(firstName, lastName, email, password, confirmPassword)) {
-                    Snackbar.make(this.getView(), "Fields are empty!", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(loginRegisterView, "Fields are empty!", Snackbar.LENGTH_LONG).show();
                     return;
                 }
 
                 if (!password.equals(confirmPassword)) {
-                    Snackbar.make(this.getView(), "Passwords do not match!", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(loginRegisterView, "Passwords do not match!", Snackbar.LENGTH_LONG).show();
                     return;
                 }
 
@@ -110,7 +111,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
             public void onResponse(Call<ServerResponse> call, retrofit2.Response<ServerResponse> response) {
 
                 ServerResponse resp = response.body();
-                Snackbar.make(getView(), resp.getMessage(), Snackbar.LENGTH_LONG).show();
+                Snackbar.make(loginRegisterView, resp.getMessage(), Snackbar.LENGTH_LONG).show();
                 progress.setVisibility(View.INVISIBLE);
             }
 
@@ -118,7 +119,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
             public void onFailure(Call<ServerResponse> call, Throwable t) {
 
                 progress.setVisibility(View.INVISIBLE);
-                Snackbar.make(getView(), t.getLocalizedMessage(), Snackbar.LENGTH_LONG).show();
+                Snackbar.make(loginRegisterView, t.getLocalizedMessage(), Snackbar.LENGTH_LONG).show();
             }
         });
     }
