@@ -80,13 +80,13 @@ public class FaceDetectionProcessor extends VisionProcessorBase<List<FirebaseVis
         instance.distractedX = true;
         instance.distractedY = false;
         if (noseYCalibrated != null && noseYFace != null) {
-          // instance.debug.setText("LEFT/RIGHT: " + Math.abs(noseYCalibrated.getPosition().getY() - noseYFace.getPosition().getY()) + " | " + diff1);
+          // instance.debugText.setText("LEFT/RIGHT: " + Math.abs(noseYCalibrated.getPosition().getY() - noseYFace.getPosition().getY()) + " | " + diff1);
         }
         instance.handler2.postDelayed(new Runnable(){
           @Override
           public void run(){
             if (instance.distractedX) {
-              instance.status.setText("You are distracted! (LEFT/RIGHT)");
+              instance.distractedText.setText("You are distractedSound! (LEFT/RIGHT)");
               instance.trueDistracted = true;
             }
           }
@@ -95,20 +95,20 @@ public class FaceDetectionProcessor extends VisionProcessorBase<List<FirebaseVis
         instance.distractedY = true;
         instance.distractedX = false;
         if (noseYCalibrated != null && noseYFace != null) {
-         // instance.debug.setText("UP/DOWN: " + Math.abs(noseYCalibrated.getPosition().getY() - noseYFace.getPosition().getY()) + " | " + diff1);
+         // instance.debugText.setText("UP/DOWN: " + Math.abs(noseYCalibrated.getPosition().getY() - noseYFace.getPosition().getY()) + " | " + diff1);
         }
         instance.handler3.postDelayed(new Runnable(){
           @Override
           public void run(){
             if (diff2 && instance.distractedY) {
-              instance.status.setText("You are distracted! (UP/DOWN)");
+              instance.distractedText.setText("You are distractedSound! (UP/DOWN)");
               instance.trueDistracted = true;
             }
           }
         }, 700);
       } else {
-        instance.status.setText("You are not distracted");
-        // instance.debug.setText("NONE: " + Math.abs(noseYCalibrated.getPosition().getY() - noseYFace.getPosition().getY()) + " | " + diff1);
+        instance.distractedText.setText("You are not distractedSound");
+        // instance.debugText.setText("NONE: " + Math.abs(noseYCalibrated.getPosition().getY() - noseYFace.getPosition().getY()) + " | " + diff1);
         instance.distractedX = false;
         instance.distractedY = false;
         instance.trueDistracted = false;

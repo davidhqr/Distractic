@@ -38,7 +38,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/register_edit_firstname"
+            android:id="@+id/register_edit_firstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/register_edit_lastname"
+            android:id="@+id/register_edit_lastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
