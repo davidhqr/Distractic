@@ -125,7 +125,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/bg_roundedButton"
+        android:background="@drawable/bg_rounded_button"
         android:text="@string/register_registerButton"
         android:textColor="@android:color/white"/>
 
