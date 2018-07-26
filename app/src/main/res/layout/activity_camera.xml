@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_splash"
+    android:background="@drawable/bg_gradient_splash"
     android:keepScreenOn="true">
 
     <com.distractic.models.CameraSourcePreview
@@ -42,7 +42,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_height="150dp"
-        android:background="@drawable/gradient">
+        android:background="@drawable/bg_gradient_camera">
     </FrameLayout>
 
     <FrameLayout
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginStart="20dp"
-            android:background="@drawable/round_button"
+            android:background="@drawable/bg_roundedButton"
             android:textColor="#FFFFFF"
             android:text="@string/camera_calibrateButton"/>
 
@@ -106,7 +106,7 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:background="@drawable/round_button"
+            android:background="@drawable/bg_roundedButton"
             android:layout_marginEnd="20dp"
             android:textColor="#FFFFFF"
             android:text="@string/camera_stopDrivingButton"/>

@@ -16,9 +16,8 @@ import com.distractic.util.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     private SharedPreferences pref;
     private Button startDrivingButton, logoutButton;
     private TextView nameText, locationText;
@@ -26,7 +25,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_home);
         pref = getSharedPreferences("info", 0);
 
         startDrivingButton = findViewById(R.id.profile_button_startDriving);
@@ -85,14 +84,14 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.profile_button_startDriving:
-                Intent cameraIntent = new Intent(ProfileActivity.this, CameraActivity.class);
+                Intent cameraIntent = new Intent(HomeActivity.this, CameraActivity.class);
                 startActivity(cameraIntent);
                 break;
             case R.id.profile_button_logout:
                 Editor editor = pref.edit();
                 editor.clear();
                 editor.apply();
-                Intent loginRegisterIntent = new Intent(ProfileActivity.this, LoginRegisterActivity.class);
+                Intent loginRegisterIntent = new Intent(HomeActivity.this, LoginRegisterActivity.class);
                 startActivity(loginRegisterIntent);
                 break;
         }
