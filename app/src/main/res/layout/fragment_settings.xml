@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/settings_image_profile"
         android:layout_marginLeft="16dp"
-        android:background="@drawable/bg_roundedButton"
+        android:background="@drawable/bg_rounded_button"
         android:text="Edit"
         android:textColor="@color/colorBlack"
         android:textSize="15sp"/>
@@ -165,7 +165,7 @@
         android:layout_below="@id/settings_edit_email"
         android:layout_marginLeft="165dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/bg_coloredRoundedButton"
+        android:background="@drawable/bg_colored_rounded_button"
         android:text="Change Password"
         android:textAlignment="center"
         android:textColor="@android:color/white"/>

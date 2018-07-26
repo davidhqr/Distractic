@@ -16,7 +16,7 @@
             android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"
-            android:background="@drawable/bg_profilePictureCircle"
+            android:background="@drawable/bg_profile_picture_circle"
             android:contentDescription="@string/description_distracticLogo"
             android:src="@drawable/full_logo"/>
 
@@ -47,7 +47,7 @@
         android:orientation="vertical"
         android:padding="15dp"
         android:layout_marginBottom="40dp"
-        android:background="@drawable/bg_appSectionRounded">
+        android:background="@drawable/bg_app_section_rounded">
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/profile_button_startDriving"
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/bg_coloredRoundedButton"
+            android:background="@drawable/bg_colored_rounded_button"
             android:text="@string/profile_startDrivingButton"
             android:textColor="@color/control_background"/>
 
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/bg_coloredRoundedButton"
+            android:background="@drawable/bg_colored_rounded_button"
             android:text="@string/profile_logoutButton"
             android:textColor="@color/control_background"/>
     </RelativeLayout>
