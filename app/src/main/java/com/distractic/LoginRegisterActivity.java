@@ -22,7 +22,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
 
     private void initFragment() {
         if (pref.getBoolean(Constants.IS_LOGGED_IN, false)) {
-            Intent profileIntent = new Intent(LoginRegisterActivity.this, ProfileActivity.class);
+            Intent profileIntent = new Intent(LoginRegisterActivity.this, HomeActivity.class);
             startActivity(profileIntent);
             finish();
         } else {

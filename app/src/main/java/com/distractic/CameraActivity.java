@@ -110,7 +110,7 @@ public final class CameraActivity extends AppCompatActivity
     }
 
     private void runBeepDistracted() {
-        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.distractedSound);
+        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.sound_distracted);
         final Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         handler1.postDelayed(new Runnable() {
             public void run() {
@@ -142,7 +142,7 @@ public final class CameraActivity extends AppCompatActivity
                 }
                 break;
             case R.id.camera_button_stopDriving:
-                Intent profileIntent = new Intent(CameraActivity.this, ProfileActivity.class);
+                Intent profileIntent = new Intent(CameraActivity.this, HomeActivity.class);
                 startActivity(profileIntent);
                 break;
         }

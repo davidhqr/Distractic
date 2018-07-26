@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@drawable/gradient_reset"
+              android:background="@drawable/bg_gradient_reset"
               android:gravity="center"
               android:orientation="vertical">
 
@@ -62,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/round_button"
+        android:background="@drawable/bg_roundedButton"
         android:text="Reset"
         android:textColor="@android:color/white"/>
 
