@@ -8,7 +8,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,36 +17,39 @@ import com.distractic.util.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     private SharedPreferences pref;
-    private Button button_startDriving, button_logout;
-    private TextView text_name, text_location;
+    private CardView startDrivingButton, logoutButton;
+    private TextView nameText, locationText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_home);
         pref = getSharedPreferences("info", 0);
 
-        button_startDriving = findViewById(R.id.profile_button_startDriving);
-        button_logout = findViewById(R.id.profile_button_logout);
-        text_name = findViewById(R.id.profile_text_name);
-        text_location = findViewById(R.id.profile_text_location);
+        startDrivingButton = findViewById(R.id.profile_button_startDriving);
+        logoutButton = findViewById(R.id.profile_button_logout);
+        nameText = findViewById(R.id.profile_text_name);
+        locationText = findViewById(R.id.profile_text_location);
 
-        button_startDriving.setOnClickListener(this);
-        button_logout.setOnClickListener(this);
+        startDrivingButton.setOnClickListener(this);
+        logoutButton.setOnClickListener(this);
 
         setText();
+        checkForPermissions();
+    }
 
+    private void checkForPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             int hasCameraPermission = checkSelfPermission(Manifest.permission.CAMERA);
-            List<String> permissions = new ArrayList<String>();
+            List<String> permissions = new ArrayList<>();
 
             if (hasCameraPermission != PackageManager.PERMISSION_GRANTED) {
                 permissions.add(Manifest.permission.CAMERA);
             }
+
             if (!permissions.isEmpty()) {
                 requestPermissions(permissions.toArray(new String[permissions.size()]), 111);
             }
@@ -54,10 +57,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void setText() {
-        Map<String,?> keys = pref.getAll();
+        String firstName = pref.getString(Constants.FIRST_NAME, "");
+        String lastName = pref.getString(Constants.LAST_NAME, "");
 
-        text_name.setText(pref.getString(Constants.FIRST_NAME, "") + " " + pref.getString(Constants.LAST_NAME, ""));
-        text_location.setText("Vancouver, BC");
+        nameText.setText(firstName + " " + lastName);
+        locationText.setText("Vancouver, BC");
     }
 
     @Override
@@ -81,14 +85,14 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.profile_button_startDriving:
-                Intent cameraIntent = new Intent(ProfileActivity.this, CameraActivity.class);
+                Intent cameraIntent = new Intent(HomeActivity.this, CameraActivity.class);
                 startActivity(cameraIntent);
                 break;
             case R.id.profile_button_logout:
                 Editor editor = pref.edit();
                 editor.clear();
                 editor.apply();
-                Intent loginRegisterIntent = new Intent(ProfileActivity.this, LoginRegisterActivity.class);
+                Intent loginRegisterIntent = new Intent(HomeActivity.this, LoginRegisterActivity.class);
                 startActivity(loginRegisterIntent);
                 break;
         }

@@ -2,15 +2,14 @@
 
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fireTopLayout"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_splash"
+    android:background="@drawable/bg_gradient_splash"
     android:keepScreenOn="true">
 
     <com.distractic.models.CameraSourcePreview
-        android:id="@+id/firePreview"
+        android:id="@+id/camera_cameraSourcePreview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -28,9 +27,9 @@
             android:id="@+id/camera_button_switchCamera"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_gravity="center_vertical|right"
+            android:layout_gravity="center_vertical|end"
             android:background="@drawable/switch_camera"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginTop="5dp"
             android:textOff=""
             android:textOn=""
@@ -43,20 +42,19 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_height="150dp"
-        android:background="@drawable/gradient">
+        android:background="@drawable/bg_gradient_camera">
     </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_above="@+id/distractedText"
+        android:layout_above="@+id/frame_distracted"
         android:layout_alignParentStart="true">
 
         <TextView
-            android:id="@+id/debug"
+            android:id="@+id/camera_text_debug"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@android:color/white"
@@ -65,59 +63,58 @@
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/distractedText"
+        android:id="@+id/frame_distracted"
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_above="@+id/control"
+        android:layout_above="@+id/frame_control"
         android:layout_alignParentStart="true">
 
         <TextView
-            android:id="@+id/status"
+            android:id="@+id/camera_text_distracted"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@android:color/white"
-            android:text="You are not distracted"/>
+            android:text="@string/camera_notDistractedText"/>
 
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/control"
+        android:id="@+id/frame_control"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="20dp"
-        android:layout_toEndOf="@id/firePreview">
+        android:layout_toEndOf="@id/camera_cameraSourcePreview">
 
         <Button
             android:id="@+id/camera_button_calibrate"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/round_button"
+            android:layout_gravity="start"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/bg_rounded_button"
             android:textColor="#FFFFFF"
-            android:text="Calibrate"/>
+            android:text="@string/camera_calibrateButton"/>
 
 
         <Button
             android:id="@+id/camera_button_stopDriving"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:background="@drawable/round_button"
-            android:layout_marginRight="20dp"
+            android:layout_gravity="end"
+            android:background="@drawable/bg_rounded_button"
+            android:layout_marginEnd="20dp"
             android:textColor="#FFFFFF"
-            android:text="Stop Driving"/>
+            android:text="@string/camera_stopDrivingButton"/>
 
     </FrameLayout>
 
     <com.distractic.models.GraphicOverlay
-        android:id="@+id/fireFaceOverlay"
+        android:id="@+id/camera_graphicOverlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"

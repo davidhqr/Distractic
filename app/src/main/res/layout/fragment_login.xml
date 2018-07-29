@@ -3,7 +3,7 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@drawable/gradient_login"
+              android:background="@drawable/bg_gradient_login"
               android:gravity="center"
               android:orientation="vertical">
 
@@ -80,11 +80,11 @@
 
 
     <android.support.v7.widget.AppCompatButton
-        android:id="@+id/login_button_loginButton"
+        android:id="@+id/login_button_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/round_button"
+        android:background="@drawable/bg_rounded_button"
         android:text="@string/login_loginButton"
         android:textColor="@android:color/white"/>
 

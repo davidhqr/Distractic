@@ -21,4 +21,10 @@
 
     <string name="profile_startDrivingButton">START DRIVING</string>
     <string name="profile_logoutButton">LOGOUT</string>
+
+    <string name="camera_restingCalibratedText">Resting face position calibrated</string>
+    <string name="camera_noFaceText">Error: No face found</string>
+    <string name="camera_notDistractedText">You are not distracted</string>
+    <string name="camera_calibrateButton">Calibrate</string>
+    <string name="camera_stopDrivingButton">Stop Driving</string>
 </resources>

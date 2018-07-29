@@ -31,32 +31,33 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class LoginFragment extends Fragment implements View.OnClickListener {
 
     private Activity loginRegisterActivity;
-    private Button button_loginbutton;
-    private EditText edit_email, edit_password;
-    private TextView text_register;
+    private View loginRegisterView;
+    private Button loginButton;
+    private EditText emailEdit, passwordEdit;
+    private TextView registerText;
     private ProgressBar progress;
     private SharedPreferences pref;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         loginRegisterActivity = this.getActivity();
-        View view = inflater.inflate(R.layout.fragment_login, container, false);
-        initViews(view);
-        return view;
+        loginRegisterView = inflater.inflate(R.layout.fragment_login, container, false);
+        initViews();
+        return loginRegisterView;
     }
 
-    private void initViews(View view) {
+    private void initViews() {
 
         pref = loginRegisterActivity.getSharedPreferences("info", 0);
 
-        button_loginbutton = view.findViewById(R.id.login_button_loginButton);
-        edit_email = view.findViewById(R.id.login_edit_email);
-        edit_password = view.findViewById(R.id.login_edit_password);
-        text_register = view.findViewById(R.id.login_text_register);
-        progress = view.findViewById(R.id.login_progress);
+        loginButton = loginRegisterView.findViewById(R.id.login_button_login);
+        emailEdit = loginRegisterView.findViewById(R.id.login_edit_email);
+        passwordEdit = loginRegisterView.findViewById(R.id.login_edit_password);
+        registerText = loginRegisterView.findViewById(R.id.login_text_register);
+        progress = loginRegisterView.findViewById(R.id.login_progress);
 
-        button_loginbutton.setOnClickListener(this);
-        text_register.setOnClickListener(this);
+        loginButton.setOnClickListener(this);
+        registerText.setOnClickListener(this);
     }
 
     @Override
@@ -68,12 +69,12 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 goToRegister();
                 break;
 
-            case R.id.login_button_loginButton:
-                String email = edit_email.getText().toString();
-                String password = edit_password.getText().toString();
+            case R.id.login_button_login:
+                String email = emailEdit.getText().toString();
+                String password = passwordEdit.getText().toString();
 
                 if (Utils.isEmpty(email, password)) {
-                    Snackbar.make(getView(), "Fields are empty!", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(view, "Fields are empty!", Snackbar.LENGTH_LONG).show();
                     return;
                 }
 
@@ -106,7 +107,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
             public void onResponse(Call<ServerResponse> call, retrofit2.Response<ServerResponse> response) {
 
                 ServerResponse resp = response.body();
-                Snackbar.make(getView(), resp.getMessage(), Snackbar.LENGTH_LONG).show();
+                Snackbar.make(loginRegisterView, resp.getMessage(), Snackbar.LENGTH_LONG).show();
 
                 if (resp.getResult().equals(Constants.SUCCESS)) {
 
@@ -127,7 +128,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
             public void onFailure(Call<ServerResponse> call, Throwable t) {
 
                 progress.setVisibility(View.INVISIBLE);
-                Snackbar.make(getView(), t.getLocalizedMessage(), Snackbar.LENGTH_LONG).show();
+                Snackbar.make(loginRegisterView, t.getLocalizedMessage(), Snackbar.LENGTH_LONG).show();
             }
         });
     }
@@ -142,7 +143,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     private void goToProfile() {
 
-        Intent profileIntent = new Intent(loginRegisterActivity, ProfileActivity.class);
+        Intent profileIntent = new Intent(loginRegisterActivity, HomeActivity.class);
         loginRegisterActivity.startActivity(profileIntent);
         loginRegisterActivity.finish();
     }
