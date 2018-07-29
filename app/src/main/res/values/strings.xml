@@ -4,6 +4,8 @@
     <string name="description_distracticLogo">This is the Distractic logo.</string>
 
     <string name="login_loginTitle">LOGIN</string>
+    <string name="login_usernameText">USERNAME</string>
+    <string name="login_passwordText">PASSWORD</string>
     <string name="login_emailHint">Email</string>
     <string name="login_passwordHint">Password</string>
     <string name="login_forgotPasswordText"><u>Forgot Password?</u></string>
@@ -27,4 +29,8 @@
     <string name="camera_notDistractedText">You are not distracted</string>
     <string name="camera_calibrateButton">Calibrate</string>
     <string name="camera_stopDrivingButton">Stop Driving</string>
+
+    <string name="landing_loginButton">LOGIN</string>
+    <string name="landing_signupButton">SIGN UP</string>
+    <string name="landing_skipnowText"><u>Skip Now</u></string>
 </resources>
