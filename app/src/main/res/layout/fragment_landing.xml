@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/landing_button_login"
         android:layout_marginTop="20dp"
-        android:text="@string/landing_skipnowText"
+        android:text="@string/landing_skipText"
         android:textColor="@color/colorWhite"
         android:textSize="16dp"
         android:layout_centerInParent="true"/>

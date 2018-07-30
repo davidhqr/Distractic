@@ -3,7 +3,6 @@ package com.distractic;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
@@ -14,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.distractic.models.RequestInterface;
 import com.distractic.models.ServerRequest;
 import com.distractic.models.ServerResponse;
 import com.distractic.models.User;
@@ -63,7 +63,7 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
 
         switch (v.getId()) {
             case R.id.signup_text_login:
-                goToLoginSignup();
+                goToLanding();
                 break;
 
             case R.id.signup_button_signup:
@@ -128,10 +128,11 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
         });
     }
 
-    private void goToLoginSignup() {
+    private void goToLanding() {
 
-        Intent loginSignupIntent = new Intent(loginSignupActivity, LoginSignupActivity.class);
-        startActivity(loginSignupIntent);
-        loginSignupActivity.finish();
+        Fragment landingFragment = new LandingFragment();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.loginsignup_fragment_frame, landingFragment);
+        ft.commit();
     }
 }

@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.distractic.models.RequestInterface;
 import com.distractic.models.ServerRequest;
 import com.distractic.models.ServerResponse;
 import com.distractic.models.User;
@@ -34,7 +35,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     private View loginSignupView;
     private Button loginButton;
     private EditText emailEdit, passwordEdit;
-    private TextView signupText;
+    private TextView signupText, forgotPasswordText;
     private ProgressBar progress;
     private SharedPreferences pref;
 
@@ -54,6 +55,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         emailEdit = loginSignupView.findViewById(R.id.login_edit_username);
         passwordEdit = loginSignupView.findViewById(R.id.login_edit_password);
         signupText = loginSignupView.findViewById(R.id.login_text_signup);
+        forgotPasswordText = loginSignupView.findViewById(R.id.login_text_forgotPassword);
         progress = loginSignupView.findViewById(R.id.login_progress);
 
         loginButton.setOnClickListener(this);
@@ -66,7 +68,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         switch (view.getId()) {
 
             case R.id.login_text_signup:
-                goToLoginSignup();
+                goToLanding();
+                break;
+
+            case R.id.login_text_forgotPassword:
+                goToForgotPassword();
                 break;
 
             case R.id.login_button_login:
@@ -133,11 +139,20 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         });
     }
 
-    private void goToLoginSignup() {
+    private void goToForgotPassword() {
 
-        Intent loginSignupIntent = new Intent(loginSignupActivity, LoginSignupActivity.class);
-        startActivity(loginSignupIntent);
-        loginSignupActivity.finish();
+        Fragment forgotPasswordFragment = new ForgotPasswordFragment();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.loginsignup_fragment_frame, forgotPasswordFragment);
+        ft.commit();
+    }
+
+    private void goToLanding() {
+
+        Fragment landingFragment = new LandingFragment();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.loginsignup_fragment_frame, landingFragment);
+        ft.commit();
     }
 
     private void goToHome() {

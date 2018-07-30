@@ -1,7 +1,4 @@
-package com.distractic;
-
-import com.distractic.models.ServerRequest;
-import com.distractic.models.ServerResponse;
+package com.distractic.models;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

@@ -9,43 +9,42 @@
     <LinearLayout
         android:id="@+id/home_layout_info"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="236dp"
         android:layout_alignParentTop="true"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/bg_opaque_road_white"
         android:orientation="vertical">
 
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/bg_profile_picture_circle"
             android:contentDescription="@string/description_distracticLogo"
             android:src="@drawable/ic_anonymous"/>
 
         <TextView
-            android:id="@+id/profile_text_name"
+            android:id="@+id/home_text_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:textColor="@color/colorWhite"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/profile_text_location"
+            android:id="@+id/home_text_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="testtest"
             android:textColor="@color/colorWhite"
             android:textSize="14sp"/>
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="280dp"
         android:layout_above="@id/home_bottomNavigation"
         android:layout_gravity="center"
         android:background="@drawable/bg_app_section_rounded"
@@ -83,7 +82,7 @@
 
             <android.support.v7.widget.CardView
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/profile_button_logout"
+                android:id="@+id/home_button_logout"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginBottom="5dp"
@@ -100,7 +99,7 @@
                     android:layout_gravity="center"
                     android:drawablePadding="16dp"
                     android:padding="16dp"
-                    android:text="@string/profile_logoutButton"
+                    android:text="@string/home_logoutButton"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp"/>
 
@@ -133,7 +132,7 @@
 
         <android.support.v7.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/profile_button_startDriving"
+            android:id="@+id/home_button_startDriving"
             android:layout_width="300dp"
             android:layout_height="100dp"
             android:layout_alignParentBottom="true"
@@ -161,7 +160,7 @@
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
-        app:itemIconTint="@color/colorWhite"
-        app:itemTextColor="@color/colorWhite"
+        app:itemIconTint="@drawable/nav_item_color_state"
+        app:itemTextColor="@drawable/nav_item_color_state"
         app:menu="@menu/navigation"/>
 </RelativeLayout>

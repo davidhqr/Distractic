@@ -17,8 +17,10 @@
     <string name="signup_signupButton">SIGN UP</string>
     <string name="signup_loginText">Already have an account?\n<u>Log in!</u></string>
 
-    <string name="profile_startDrivingButton">START DRIVING</string>
-    <string name="profile_logoutButton">LOGOUT</string>
+    <string name="home_trackRecordText">Track your driving record</string>
+    <string name="home_loginSignupText"><u>Login or Sign Up</u></string>
+    <string name="home_startDrivingButton">START DRIVING</string>
+    <string name="home_logoutButton">LOGOUT</string>
 
     <string name="camera_restingCalibratedText">Resting face position calibrated</string>
     <string name="camera_noFaceText">Error: No face found</string>
@@ -28,7 +30,7 @@
 
     <string name="landing_loginButton">LOG IN</string>
     <string name="landing_signupButton">SIGN UP</string>
-    <string name="landing_skipnowText"><u>Skip Now</u></string>
+    <string name="landing_skipText"><u>Skip Now</u></string>
 
     <string name="reset_passwordText">PASSWORD</string>
     <string name="reset_resetPassword">Reset Your Password</string>
@@ -40,4 +42,8 @@
     <string name="forgot_emailText">EMAIL</string>
     <string name="forgot_sendButton">SEND</string>
     <string name="forgot_passwordMessage">Don\’t Worry! We will send you an email with a link to reset your password to continue your journey!</string>
+
+    <string name="navigation_home">Home</string>
+    <string name="navigation_profile">Profile</string>
+    <string name="navigation_settings">Settings</string>
 </resources>
