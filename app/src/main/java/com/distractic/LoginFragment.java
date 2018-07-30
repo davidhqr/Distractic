@@ -51,7 +51,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         pref = loginRegisterActivity.getSharedPreferences("info", 0);
 
         loginButton = loginRegisterView.findViewById(R.id.login_button_login);
-        emailEdit = loginRegisterView.findViewById(R.id.login_edit_email);
+        emailEdit = loginRegisterView.findViewById(R.id.login_edit_username);
         passwordEdit = loginRegisterView.findViewById(R.id.login_edit_password);
         registerText = loginRegisterView.findViewById(R.id.login_text_register);
         progress = loginRegisterView.findViewById(R.id.login_progress);
