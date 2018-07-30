@@ -8,7 +8,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:id="@+id/register_image_distracticLogo"
+        android:id="@+id/signup_image_distracticLogo"
         android:layout_marginTop="20dp"
         android:layout_height="100dp"
         android:layout_marginBottom="8dp"
@@ -16,14 +16,14 @@
         android:src="@drawable/car_logo_pink"/>
 
     <TextView
-        android:id="@+id/register_text_firstName"
+        android:id="@+id/signup_text_firstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/register_image_distracticLogo"
+        android:layout_below="@id/signup_image_distracticLogo"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:gravity="start"
-        android:text="@string/register_firstNameText"
+        android:text="@string/signup_firstNameText"
         android:textAlignment="gravity"
         android:textColor="@color/colorPrimary"
         android:textSize="12sp" />
@@ -33,12 +33,12 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:layout_below="@id/register_image_distracticLogo"
-        android:id="@+id/register_firstName">
+        android:layout_below="@id/signup_image_distracticLogo"
+        android:id="@+id/signup_firstName">
 
 
         <EditText
-            android:id="@+id/register_edit_firstName"
+            android:id="@+id/signup_edit_firstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="10dp"
@@ -50,14 +50,14 @@
 
 
     <TextView
-        android:id="@+id/register_text_lastName"
+        android:id="@+id/signup_text_lastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/register_firstName"
+        android:layout_below="@id/signup_firstName"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:gravity="start"
-        android:text="@string/register_lastNameText"
+        android:text="@string/signup_lastNameText"
         android:textAlignment="gravity"
         android:textColor="@color/colorPrimary"
         android:textSize="12sp" />
@@ -67,11 +67,11 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:layout_below="@id/register_firstName"
-        android:id="@+id/register_lastName">
+        android:layout_below="@id/signup_firstName"
+        android:id="@+id/signup_lastName">
 
         <EditText
-            android:id="@+id/register_edit_lastName"
+            android:id="@+id/signup_edit_lastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_person"
@@ -83,14 +83,14 @@
 
 
     <TextView
-        android:id="@+id/register_text_email"
+        android:id="@+id/signup_text_email"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@id/register_lastName"
+        android:layout_below="@id/signup_lastName"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:gravity="start"
-        android:text="@string/register_emailText"
+        android:text="@string/signup_emailText"
         android:textAlignment="gravity"
         android:textColor="@color/colorPrimary"
         android:textSize="12sp" />
@@ -98,13 +98,13 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/register_lastName"
-        android:id="@+id/register_email"
+        android:layout_below="@id/signup_lastName"
+        android:id="@+id/signup_email"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp">
 
         <EditText
-            android:id="@+id/register_edit_email"
+            android:id="@+id/signup_edit_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_mail"
@@ -116,14 +116,14 @@
     </android.support.design.widget.TextInputLayout>
 
     <TextView
-        android:id="@+id/register_text_password"
+        android:id="@+id/signup_text_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/register_email"
+        android:layout_below="@id/signup_email"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:gravity="start"
-        android:text="@string/register_passwordText"
+        android:text="@string/signup_passwordText"
         android:textAlignment="gravity"
         android:textColor="@color/colorPrimary"
         android:textSize="12sp" />
@@ -132,13 +132,13 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/register_email"
+        android:layout_below="@id/signup_email"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:id="@+id/register_password">
+        android:id="@+id/signup_password">
 
         <EditText
-            android:id="@+id/register_edit_password"
+            android:id="@+id/signup_edit_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_key"
@@ -149,14 +149,14 @@
     </android.support.design.widget.TextInputLayout>
 
     <TextView
-        android:id="@+id/register_text_confirmPassword"
+        android:id="@+id/signup_text_confirmPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/register_password"
+        android:layout_below="@id/signup_password"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:gravity="start"
-        android:text="@string/register_confirmPasswordText"
+        android:text="@string/signup_confirmPasswordText"
         android:textAlignment="gravity"
         android:textColor="@color/colorPrimary"
         android:textSize="12sp" />
@@ -165,13 +165,13 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/register_password"
-        android:id="@+id/register_confirmPassword"
+        android:layout_below="@id/signup_password"
+        android:id="@+id/signup_confirmPassword"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp">
 
         <EditText
-            android:id="@+id/register_edit_confirmPassword"
+            android:id="@+id/signup_edit_confirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_key"
@@ -182,30 +182,30 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.v7.widget.AppCompatButton
-        android:id="@+id/register_button_registerbutton"
-        android:layout_below="@id/register_confirmPassword"
+        android:id="@+id/signup_button_signup"
+        android:layout_below="@id/signup_confirmPassword"
         android:layout_width="300dp"
         android:layout_centerInParent="true"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:background="@drawable/bg_rounded_button_filled"
-        android:text="@string/register_registerButton"
+        android:text="@string/signup_signupButton"
         android:textColor="@color/colorPrimary"/>
 
     <TextView
-        android:id="@+id/register_text_login"
-        android:layout_below="@id/register_button_registerbutton"
+        android:id="@+id/signup_text_login"
+        android:layout_below="@id/signup_button_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_centerInParent="true"
-        android:text="@string/register_loginText"
+        android:text="@string/signup_loginText"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary" />
 
     <ProgressBar
-        android:id="@+id/register_progress"
-        android:layout_below="@+id/register_text_login"
+        android:id="@+id/signup_progress"
+        android:layout_below="@+id/signup_text_login"
         style="@style/Base.Widget.AppCompat.ProgressBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

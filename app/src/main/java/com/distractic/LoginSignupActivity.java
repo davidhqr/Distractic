@@ -9,27 +9,37 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.distractic.util.Constants;
 
-public class LoginRegisterActivity extends AppCompatActivity {
+public class LoginSignupActivity extends AppCompatActivity {
     private SharedPreferences pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_loginregister);
+        setContentView(R.layout.activity_loginsignup);
         pref = getSharedPreferences("info", 0);
         initFragment();
     }
 
     private void initFragment() {
         if (pref.getBoolean(Constants.IS_LOGGED_IN, false)) {
-            Intent profileIntent = new Intent(LoginRegisterActivity.this, HomeActivity.class);
-            startActivity(profileIntent);
-            finish();
+            goToHome();
         } else {
-            Fragment loginFragment = new LoginFragment();
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.replace(R.id.loginregister_fragment_frame, loginFragment);
-            ft.commit();
+            goToLanding();
         }
+    }
+
+    private void goToLanding() {
+
+        Fragment landingFragment = new LandingFragment();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.loginsignup_fragment_frame, landingFragment);
+        ft.commit();
+    }
+
+    private void goToHome() {
+
+        Intent homeIntent = new Intent(this, HomeActivity.class);
+        startActivity(homeIntent);
+        finish();
     }
 }

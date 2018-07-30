@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.distractic.LoginRegisterActivity"
+            android:name="com.distractic.LoginSignupActivity"
             android:label="@string/app_name">
         </activity>
         <activity

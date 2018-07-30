@@ -38,7 +38,7 @@
         android:textColor="@color/colorPrimary" />
 
     <TextView
-        android:id="@+id/landing_text_skipnow"
+        android:id="@+id/landing_text_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/landing_button_login"

@@ -1,6 +1,7 @@
 <resources>
     <style name="MaterialTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:textColorHint">@color/colorGrey</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
     </style>
 </resources>
 

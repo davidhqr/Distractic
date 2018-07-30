@@ -5,12 +5,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageManager;
+import android.graphics.Camera;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.distractic.util.Constants;
@@ -85,16 +85,28 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.profile_button_startDriving:
-                Intent cameraIntent = new Intent(HomeActivity.this, CameraActivity.class);
-                startActivity(cameraIntent);
+                goToCamera();
                 break;
             case R.id.profile_button_logout:
                 Editor editor = pref.edit();
                 editor.clear();
                 editor.apply();
-                Intent loginRegisterIntent = new Intent(HomeActivity.this, LoginRegisterActivity.class);
-                startActivity(loginRegisterIntent);
+                goToLoginSignup();
                 break;
         }
+    }
+
+    private void goToCamera() {
+
+        Intent cameraIntent = new Intent(this, CameraActivity.class);
+        startActivity(cameraIntent);
+        finish();
+    }
+
+    private void goToLoginSignup() {
+
+        Intent loginSignupIntent = new Intent(this, LoginSignupActivity.class);
+        startActivity(loginSignupIntent);
+        finish();
     }
 }

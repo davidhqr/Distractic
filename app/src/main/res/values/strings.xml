@@ -8,16 +8,16 @@
     <string name="login_emailHint">Email</string>
     <string name="login_passwordHint">Password</string>
     <string name="login_forgotPasswordText"><u>Forgot Password?</u></string>
-    <string name="login_loginButton">LOGIN</string>
-    <string name="login_registerText">Don\'t have an account?\n<u>Register now!</u></string>
+    <string name="login_loginButton">LOG IN</string>
+    <string name="login_signupText">Not a member yet?\n<u>Sign up!</u></string>
 
-    <string name="register_firstNameText">FIRST NAME</string>
-    <string name="register_lastNameText">LAST NAME</string>
-    <string name="register_emailText">EMAIL</string>
-    <string name="register_passwordText">PASSWORD</string>
-    <string name="register_confirmPasswordText">CONFIRM PASSWORD</string>
-    <string name="register_registerButton">REGISTER</string>
-    <string name="register_loginText">Already have an account?\n<u>Login now!</u></string>
+    <string name="signup_firstNameText">FIRST NAME</string>
+    <string name="signup_lastNameText">LAST NAME</string>
+    <string name="signup_emailText">EMAIL</string>
+    <string name="signup_passwordText">PASSWORD</string>
+    <string name="signup_confirmPasswordText">CONFIRM PASSWORD</string>
+    <string name="signup_signupButton">SIGN UP</string>
+    <string name="signup_loginText">Already have an account?\n<u>Log in!</u></string>
 
     <string name="profile_startDrivingButton">START DRIVING</string>
     <string name="profile_logoutButton">LOGOUT</string>
@@ -28,7 +28,7 @@
     <string name="camera_calibrateButton">Calibrate</string>
     <string name="camera_stopDrivingButton">Stop Driving</string>
 
-    <string name="landing_loginButton">LOGIN</string>
+    <string name="landing_loginButton">LOG IN</string>
     <string name="landing_signupButton">SIGN UP</string>
     <string name="landing_skipnowText"><u>Skip Now</u></string>
 </resources>

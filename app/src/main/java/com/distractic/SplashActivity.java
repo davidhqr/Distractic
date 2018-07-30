@@ -17,10 +17,15 @@ public class SplashActivity extends Activity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                Intent mainIntent = new Intent(SplashActivity.this, LoginRegisterActivity.class);
-                startActivity(mainIntent);
-                finish();
+                goToLoginSignup();
             }
         }, Constants.SPLASH_DISPLAY_LENGTH);
+    }
+
+    private void goToLoginSignup() {
+
+        Intent loginSignupIntent = new Intent(this, LoginSignupActivity.class);
+        startActivity(loginSignupIntent);
+        finish();
     }
 }

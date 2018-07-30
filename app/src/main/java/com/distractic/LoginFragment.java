@@ -30,34 +30,34 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginFragment extends Fragment implements View.OnClickListener {
 
-    private Activity loginRegisterActivity;
-    private View loginRegisterView;
+    private Activity loginSignupActivity;
+    private View loginSignupView;
     private Button loginButton;
     private EditText emailEdit, passwordEdit;
-    private TextView registerText;
+    private TextView signupText;
     private ProgressBar progress;
     private SharedPreferences pref;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        loginRegisterActivity = this.getActivity();
-        loginRegisterView = inflater.inflate(R.layout.fragment_login, container, false);
+        loginSignupActivity = this.getActivity();
+        loginSignupView = inflater.inflate(R.layout.fragment_login, container, false);
         initViews();
-        return loginRegisterView;
+        return loginSignupView;
     }
 
     private void initViews() {
 
-        pref = loginRegisterActivity.getSharedPreferences("info", 0);
+        pref = loginSignupActivity.getSharedPreferences("info", 0);
 
-        loginButton = loginRegisterView.findViewById(R.id.login_button_login);
-        emailEdit = loginRegisterView.findViewById(R.id.login_edit_username);
-        passwordEdit = loginRegisterView.findViewById(R.id.login_edit_password);
-        registerText = loginRegisterView.findViewById(R.id.login_text_register);
-        progress = loginRegisterView.findViewById(R.id.login_progress);
+        loginButton = loginSignupView.findViewById(R.id.login_button_login);
+        emailEdit = loginSignupView.findViewById(R.id.login_edit_username);
+        passwordEdit = loginSignupView.findViewById(R.id.login_edit_password);
+        signupText = loginSignupView.findViewById(R.id.login_text_signup);
+        progress = loginSignupView.findViewById(R.id.login_progress);
 
         loginButton.setOnClickListener(this);
-        registerText.setOnClickListener(this);
+        signupText.setOnClickListener(this);
     }
 
     @Override
@@ -65,8 +65,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
         switch (view.getId()) {
 
-            case R.id.login_text_register:
-                goToRegister();
+            case R.id.login_text_signup:
+                goToLoginSignup();
                 break;
 
             case R.id.login_button_login:
@@ -107,7 +107,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
             public void onResponse(Call<ServerResponse> call, retrofit2.Response<ServerResponse> response) {
 
                 ServerResponse resp = response.body();
-                Snackbar.make(loginRegisterView, resp.getMessage(), Snackbar.LENGTH_LONG).show();
+                Snackbar.make(loginSignupView, resp.getMessage(), Snackbar.LENGTH_LONG).show();
 
                 if (resp.getResult().equals(Constants.SUCCESS)) {
 
@@ -118,7 +118,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     editor.putString(Constants.LAST_NAME, resp.getUser().getLastName());
                     editor.putString(Constants.UNIQUE_ID, resp.getUser().getUniqueId());
                     editor.apply();
-                    goToProfile();
+                    goToHome();
                 }
 
                 progress.setVisibility(View.INVISIBLE);
@@ -128,23 +128,22 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
             public void onFailure(Call<ServerResponse> call, Throwable t) {
 
                 progress.setVisibility(View.INVISIBLE);
-                Snackbar.make(loginRegisterView, t.getLocalizedMessage(), Snackbar.LENGTH_LONG).show();
+                Snackbar.make(loginSignupView, t.getLocalizedMessage(), Snackbar.LENGTH_LONG).show();
             }
         });
     }
 
-    private void goToRegister() {
+    private void goToLoginSignup() {
 
-        Fragment registerFragment = new RegisterFragment();
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.loginregister_fragment_frame, registerFragment);
-        ft.commit();
+        Intent loginSignupIntent = new Intent(loginSignupActivity, LoginSignupActivity.class);
+        startActivity(loginSignupIntent);
+        loginSignupActivity.finish();
     }
 
-    private void goToProfile() {
+    private void goToHome() {
 
-        Intent profileIntent = new Intent(loginRegisterActivity, HomeActivity.class);
-        loginRegisterActivity.startActivity(profileIntent);
-        loginRegisterActivity.finish();
+        Intent homeIntent = new Intent(loginSignupActivity, HomeActivity.class);
+        loginSignupActivity.startActivity(homeIntent);
+        loginSignupActivity.finish();
     }
 }
