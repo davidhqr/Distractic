@@ -5,8 +5,6 @@
 
     <string name="login_usernameText">USERNAME</string>
     <string name="login_passwordText">PASSWORD</string>
-    <string name="login_emailHint">Email</string>
-    <string name="login_passwordHint">Password</string>
     <string name="login_forgotPasswordText"><u>Forgot Password?</u></string>
     <string name="login_loginButton">LOG IN</string>
     <string name="login_signupText">Not a member yet?\n<u>Sign up!</u></string>
@@ -31,4 +29,10 @@
     <string name="landing_loginButton">LOG IN</string>
     <string name="landing_signupButton">SIGN UP</string>
     <string name="landing_skipnowText"><u>Skip Now</u></string>
+
+    <string name="reset_password">PASSWORD</string>
+    <string name="reset_resetPassword">Reset Your Password</string>
+    <string name="reset_confirmPassword">CONFIRM PASSWORD</string>
+    <string name="reset_remember">Remember your password?\n<u>Login Now!</u></string>
+    <string name="reset_resetButton">RESET</string>
 </resources>
