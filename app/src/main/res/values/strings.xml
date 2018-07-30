@@ -3,7 +3,6 @@
     <string name="app_name">Distractic</string>
     <string name="description_distracticLogo">This is the Distractic logo.</string>
 
-    <string name="login_loginTitle">LOGIN</string>
     <string name="login_usernameText">USERNAME</string>
     <string name="login_passwordText">PASSWORD</string>
     <string name="login_emailHint">Email</string>
@@ -12,12 +11,11 @@
     <string name="login_loginButton">LOGIN</string>
     <string name="login_registerText">Don\'t have an account?\n<u>Register now!</u></string>
 
-    <string name="register_registerTitle">REGISTER</string>
-    <string name="register_firstNameHint">First Name</string>
-    <string name="register_lastNameHint">Last Name</string>
-    <string name="register_emailHint">Email</string>
-    <string name="register_passwordHint">Password</string>
-    <string name="register_confirmPasswordHint">Confirm Password</string>
+    <string name="register_firstNameText">FIRST NAME</string>
+    <string name="register_lastNameText">LAST NAME</string>
+    <string name="register_emailText">EMAIL</string>
+    <string name="register_passwordText">PASSWORD</string>
+    <string name="register_confirmPasswordText">CONFIRM PASSWORD</string>
     <string name="register_registerButton">REGISTER</string>
     <string name="register_loginText">Already have an account?\n<u>Login now!</u></string>
 

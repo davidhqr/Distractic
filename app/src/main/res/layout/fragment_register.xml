@@ -1,120 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@drawable/bg_gradient_register"
+              android:background="@drawable/bg_opaque_road_white"
               android:gravity="center"
               android:orientation="vertical">
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:id="@+id/register_image_distracticLogo"
+        android:layout_marginTop="20dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="8dp"
         android:contentDescription="@string/description_distracticLogo"
-        android:src="@drawable/full_logo"/>
+        android:src="@drawable/car_logo_pink"/>
 
+    <TextView
+        android:id="@+id/register_text_firstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_image_distracticLogo"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:gravity="start"
+        android:text="@string/register_firstNameText"
+        android:textAlignment="gravity"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp" />
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_below="@id/register_image_distracticLogo"
+        android:id="@+id/register_firstName">
 
-        <TextView
-            android:id="@+id/register_text_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:text="@string/register_registerTitle"
-            android:textColor="@color/colorWhite"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <EditText
             android:id="@+id/register_edit_firstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:drawableEnd="@drawable/ic_person"
-            android:hint="@string/register_firstNameHint"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_person"
             android:inputType="textPersonName"
-            android:textColor="@color/colorWhite"/>
+            android:textColor="@color/colorTextGrey" />
 
     </android.support.design.widget.TextInputLayout>
 
+
+    <TextView
+        android:id="@+id/register_text_lastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_firstName"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:gravity="start"
+        android:text="@string/register_lastNameText"
+        android:textAlignment="gravity"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp" />
+
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_below="@id/register_firstName"
+        android:id="@+id/register_lastName">
 
         <EditText
             android:id="@+id/register_edit_lastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:drawableEnd="@drawable/ic_person"
-            android:hint="@string/register_lastNameHint"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="10dp"
             android:inputType="textPersonName"
             android:textColor="@color/colorWhite"/>
 
     </android.support.design.widget.TextInputLayout>
 
 
+    <TextView
+        android:id="@+id/register_text_email"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/register_lastName"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:gravity="start"
+        android:text="@string/register_emailText"
+        android:textAlignment="gravity"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp" />
+
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_lastName"
+        android:id="@+id/register_email"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp">
 
         <EditText
             android:id="@+id/register_edit_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:drawableEnd="@drawable/ic_mail"
-            android:hint="@string/register_emailHint"
+            android:drawableStart="@drawable/ic_mail"
+            android:drawablePadding="10dp"
             android:inputType="textEmailAddress"
             android:textColor="@color/colorWhite"
             android:textColorHint="@color/colorWhite"/>
 
     </android.support.design.widget.TextInputLayout>
 
+    <TextView
+        android:id="@+id/register_text_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_email"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:gravity="start"
+        android:text="@string/register_passwordText"
+        android:textAlignment="gravity"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp" />
+
+
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_email"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:id="@+id/register_password">
 
         <EditText
             android:id="@+id/register_edit_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:drawableEnd="@drawable/ic_key"
-            android:hint="@string/register_passwordHint"
+            android:drawableStart="@drawable/ic_key"
+            android:drawablePadding="10dp"
             android:inputType="textPassword"
             android:textColor="@color/colorWhite"/>
 
     </android.support.design.widget.TextInputLayout>
 
+    <TextView
+        android:id="@+id/register_text_confirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_password"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:gravity="start"
+        android:text="@string/register_confirmPasswordText"
+        android:textAlignment="gravity"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp" />
+
+
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_password"
+        android:id="@+id/register_confirmPassword"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp">
 
         <EditText
             android:id="@+id/register_edit_confirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:drawableEnd="@drawable/ic_key"
-            android:hint="@string/register_confirmPasswordHint"
+            android:drawableStart="@drawable/ic_key"
+            android:drawablePadding="10dp"
             android:inputType="textPassword"
             android:textColor="@color/colorWhite"/>
 
@@ -122,29 +183,35 @@
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/register_button_registerbutton"
-        android:layout_width="wrap_content"
+        android:layout_below="@id/register_confirmPassword"
+        android:layout_width="300dp"
+        android:layout_centerInParent="true"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_rounded_button"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_rounded_button_filled"
         android:text="@string/register_registerButton"
-        android:textColor="@android:color/white"/>
+        android:textColor="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/register_text_login"
+        android:layout_below="@id/register_button_registerbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerInParent="true"
         android:text="@string/register_loginText"
         android:textAlignment="center"
-        android:textColor="@color/colorWhite"/>
+        android:textColor="@color/colorPrimary" />
 
     <ProgressBar
         android:id="@+id/register_progress"
+        android:layout_below="@+id/register_text_login"
         style="@style/Base.Widget.AppCompat.ProgressBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="-20dp"
         android:indeterminate="true"
         android:visibility="invisible"/>
 
-</LinearLayout>
+</RelativeLayout>
