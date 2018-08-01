@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.distractic.models.RequestInterface;
 import com.distractic.models.ServerRequest;
@@ -28,6 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ForgotPasswordFragment extends Fragment implements View.OnClickListener {
     private Activity loginSignupActivity;
     private View loginSignupView;
+    private TextView backText;
     private EditText emailEdit;
     private Button resetPasswordButton;
     private ProgressBar progress;
@@ -41,11 +43,13 @@ public class ForgotPasswordFragment extends Fragment implements View.OnClickList
     }
 
     private void initViews() {
+        backText = loginSignupView.findViewById(R.id.forgot_text_back);
         emailEdit = loginSignupView.findViewById(R.id.forgot_edit_email);
         resetPasswordButton = loginSignupView.findViewById(R.id.forgot_button_resetPassword);
         progress = loginSignupView.findViewById(R.id.reset_progress_loading);
 
         resetPasswordButton.setOnClickListener(this);
+        backText.setOnClickListener(this);
     }
 
     @Override
@@ -61,6 +65,10 @@ public class ForgotPasswordFragment extends Fragment implements View.OnClickList
 
                 progress.setVisibility(View.VISIBLE);
                 resetProcess(email);
+                break;
+
+            case R.id.forgot_text_back:
+                goToLogin();
                 break;
         }
     }
@@ -110,6 +118,14 @@ public class ForgotPasswordFragment extends Fragment implements View.OnClickList
         Fragment landingFragment = new LandingFragment();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.replace(R.id.loginsignup_fragment_frame, landingFragment);
+        ft.commit();
+    }
+
+    private void goToLogin() {
+
+        Fragment loginFragment = new LoginFragment();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.loginsignup_fragment_frame, loginFragment);
         ft.commit();
     }
 }
