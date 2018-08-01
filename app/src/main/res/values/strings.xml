@@ -43,8 +43,19 @@
     <string name="forgot_emailText">EMAIL</string>
     <string name="forgot_resetPasswordButton">RESET PASSWORD</string>
     <string name="forgot_passwordMessage">Don\’t worry! We will send you an email with a link to reset your password.</string>
+    <string name="forgot_sendButton">SEND</string>
+    <string name="forgot_text_back"><u>GO BACK</u></string>
 
     <string name="navigation_home">Home</string>
     <string name="navigation_profile">Profile</string>
     <string name="navigation_settings">Settings</string>
+
+    <string name="settings_settingsText">SETTINGS</string>
+    <string name="settings_editButton">Edit</string>
+
+    <string name="change_changePasswordText">Change Your Password</string>
+    <string name="change_oldPasswordText">OLD PASSWORD</string>
+    <string name="change_doneButton">DONE</string>
+    <string name="change_text_back">GO BACK</string>
+    <string name="change_newPassowrdText">NEW PASSWORD</string>
 </resources>
