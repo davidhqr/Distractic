@@ -7,4 +7,5 @@
     <color name="colorTextGrey">#808080</color>
     <color name="colorBlack">#000000</color>
     <color name="colorPrimaryOpaque">#e6ff5a60</color>
+    <color name="colorIcons">#ff6368</color>
 </resources>
