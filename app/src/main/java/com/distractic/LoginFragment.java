@@ -60,6 +60,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
         loginButton.setOnClickListener(this);
         signupText.setOnClickListener(this);
+        forgotPasswordText.setOnClickListener(this);
     }
 
     @Override
