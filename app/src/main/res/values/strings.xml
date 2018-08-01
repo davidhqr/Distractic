@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">Distractic</string>
     <string name="description_distracticLogo">This is the Distractic logo.</string>
+    <string name="description_lock">This is a lock.</string>
 
     <string name="login_usernameText">USERNAME</string>
     <string name="login_passwordText">PASSWORD</string>
@@ -40,8 +41,8 @@
 
     <string name="forgot_password">Forgot Your Password?</string>
     <string name="forgot_emailText">EMAIL</string>
-    <string name="forgot_sendButton">SEND</string>
-    <string name="forgot_passwordMessage">Don\’t Worry! We will send you an email with a link to reset your password to continue your journey!</string>
+    <string name="forgot_resetPasswordButton">RESET PASSWORD</string>
+    <string name="forgot_passwordMessage">Don\’t worry! We will send you an email with a link to reset your password.</string>
 
     <string name="navigation_home">Home</string>
     <string name="navigation_profile">Profile</string>
