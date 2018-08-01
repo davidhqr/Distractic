@@ -52,8 +52,8 @@
     <string name="settings_editButton">Edit</string>
 
     <string name="change_changePasswordText">Change Your Password</string>
-    <string name="change_passwordText">PASSWORD</string>
+    <string name="change_oldPasswordText">OLD PASSWORD</string>
     <string name="change_doneButton">DONE</string>
     <string name="change_text_back">GO BACK</string>
-    <string name="change_confirmPassowrdText">CONFIRM PASSWORD</string>
+    <string name="change_newPassowrdText">NEW PASSWORD</string>
 </resources>
